@@ -68,514 +68,363 @@ export const productCategories: ProductCategory[] = [
 export const featuredProducts: Product[] = [
   // Kubix Prime Gold Collection
   {
-    id: 'kubix-prime-gold-bib-cock',
-    name: 'Kubix Prime Gold Bib Cock with Wall Flange',
+    id: 'kubix-prime-gold-basin-mixer',
+    name: 'Kubix Prime Gold Basin Mixer',
     category: 'cp-fittings',
     subcategory: 'Basin Mixers',
     collection: 'Kubix Prime Gold',
-    price: 2452,
-    originalPrice: 2885,
-    description: 'Premium gold finish bib cock with wall flange, featuring 20mm ceramic cartridge for superior performance.',
+    price: 8999,
+    originalPrice: 12999,
+    description: 'Luxury gold-finished basin mixer with premium cartridge and elegant design. Perfect for modern bathrooms seeking a touch of luxury.',
     features: [
-      '7 Years Warranty',
-      'High Quality Ceramic Disc',
-      '50,00,000 Operating Cycles Guaranteed',
-      'IS Standards Compliant',
-      'Aerated Flow Technology'
+      '24K Gold Plated Finish',
+      'Ceramic Cartridge - 5 Lakh Operations',
+      'Water Saving Aerator',
+      'Lead-Free Brass Body',
+      'Smooth Single Lever Operation',
+      'Anti-Lime Scale Technology'
     ],
     specifications: {
-      'Catalogue No': 'GL-2501',
-      '20MM Ceramic Cartridge': '',
-      'Brass Body - 58-61% Copper Content': '',
-      'Gold Plated Finish - 13-14 Micron Nickel + 0.3-0.7 Micron Chromium': '',
-      'Quarter Turn Operation': '',
-      'Operating Temperature: 5°C to 80°C': '',
-      'Water Pressure: 0.1 to 10 bar': ''
+      'Material': 'Brass with Gold Plating',
+      'Cartridge': '40mm Ceramic',
+      'Water Pressure': '0.5 to 5 Bar',
+      'Temperature': 'Up to 85°C',
+      'Warranty': '10 Years',
+      'Finish': '24K Gold Plated',
+      'Flow Rate': '6-8 LPM at 3 Bar'
     },
     images: [
-      '/images/products/ganga/kubix-prime-gold/GL-2501-bib-cock.jpg'
+      'https://picsum.photos/500/500?random=20',
+      'https://picsum.photos/500/500?random=21',
+      'https://picsum.photos/500/500?random=22'
     ],
     inStock: true,
     rating: 4.8,
     reviewCount: 156,
-    tags: ['premium', 'gold', 'kubix-prime', 'bib-cock'],
-    warranty: '7 Years'
+    tags: ['luxury', 'gold', 'premium', 'basin mixer', 'kubix'],
+    warranty: '10 Years Comprehensive Warranty'
   },
+  
   {
-    id: 'kubix-prime-gold-pillar-cock',
-    name: 'Kubix Prime Gold Pillar Cock',
+    id: 'kubix-prime-gold-shower-mixer',
+    name: 'Kubix Prime Gold Shower Mixer',
     category: 'cp-fittings',
-    subcategory: 'Basin Mixers',
+    subcategory: 'Shower Mixers',
     collection: 'Kubix Prime Gold',
-    price: 3668,
-    originalPrice: 4315,
-    description: 'Elegant gold finish pillar cock with premium ceramic cartridge.',
+    price: 11999,
+    originalPrice: 16999,
+    description: 'Premium gold-plated shower mixer with advanced temperature control and luxury finish.',
     features: [
-      '7 Years Warranty',
-      'Premium Gold Finish',
-      'High Flow Design',
-      'Easy Installation'
+      '24K Gold Plated Finish',
+      'Temperature Control Cartridge',
+      'Wall Mount Installation',
+      'Anti-Scald Protection',
+      'Premium Brass Construction'
     ],
     specifications: {
-      'Catalogue No': 'GL-2502',
-      '20MM Ceramic Cartridge': '',
-      'Gold Plated Finish': '',
-      'Brass Body Construction': '',
-      'Quarter Turn Operation': ''
+      'Material': 'Brass with Gold Plating',
+      'Cartridge': '35mm Thermostatic',
+      'Water Pressure': '1 to 5 Bar',
+      'Temperature Range': '20°C to 50°C',
+      'Warranty': '10 Years',
+      'Finish': '24K Gold Plated'
     },
     images: [
-      '/images/products/ganga/kubix-prime-gold/GL-2502-pillar-cock.jpg'
+      'https://picsum.photos/500/500?random=23',
+      'https://picsum.photos/500/500?random=24'
     ],
     inStock: true,
     rating: 4.7,
     reviewCount: 89,
-    tags: ['premium', 'gold', 'kubix-prime', 'pillar-cock'],
-    warranty: '7 Years'
-  },
-  {
-    id: 'kubix-prime-gold-basin-mixer',
-    name: 'Kubix Prime Gold Single Lever Basin Mixer',
-    category: 'cp-fittings',
-    subcategory: 'Basin Mixers',
-    collection: 'Kubix Prime Gold',
-    price: 7476,
-    originalPrice: 8795,
-    description: 'Premium single lever basin mixer with 450mm braided hoses.',
-    features: [
-      '7 Years Warranty',
-      'Easy Single Lever Control',
-      'Premium Gold Finish',
-      'High Quality Hoses'
-    ],
-    specifications: {
-      'Catalogue No': 'GL-2512',
-      '450mm Braided Hoses': '',
-      'Gold Plated Finish': '',
-      'Single Lever Operation': '',
-      'Brass Body': ''
-    },
-    images: [
-      '/images/products/ganga/kubix-prime-gold/GL-2512-basin-mixer.jpg'
-    ],
-    inStock: true,
-    rating: 4.5,
-    reviewCount: 178,
-    tags: ['premium', 'gold', 'kubix-prime', 'basin-mixer'],
-    warranty: '7 Years'
-  },
-  {
-    id: 'kubix-prime-gold-flush-valve',
-    name: 'Kubix Prime Gold Metropole Flush Valve',
-    category: 'cp-fittings',
-    subcategory: 'Flush Systems',
-    collection: 'Kubix Prime Gold',
-    price: 6061,
-    originalPrice: 7130,
-    description: 'Concealed body metropole flush valve with control cock and gold operation plate.',
-    features: [
-      '7 Years Warranty',
-      'Concealed Installation',
-      'Premium Gold Operation Plate',
-      'High Performance'
-    ],
-    specifications: {
-      'Catalogue No': 'GL-016',
-      '40MM Control Cock': '',
-      '1.5" Operation Plate (Square)': '',
-      'Concealed Body Design': '',
-      'Gold Finish': ''
-    },
-    images: [
-      '/images/products/ganga/kubix-prime-gold/GL-016-flush-valve.jpg'
-    ],
-    inStock: true,
-    rating: 4.6,
-    reviewCount: 67,
-    tags: ['premium', 'gold', 'kubix-prime', 'flush-valve'],
-    warranty: '7 Years'
+    tags: ['luxury', 'gold', 'shower mixer', 'thermostatic'],
+    warranty: '10 Years Manufacturing Warranty'
   },
 
   // Flort Prime Jet Black Collection
   {
-    id: 'flort-prime-jet-black-bib-cock',
-    name: 'Flort Prime Jet Black Bib Cock with Wall Flange',
+    id: 'flort-prime-jet-black-basin-mixer',
+    name: 'Flort Prime Jet Black Basin Mixer',
     category: 'cp-fittings',
     subcategory: 'Basin Mixers',
     collection: 'Flort Prime Jet Black',
-    price: 2452,
-    originalPrice: 2885,
-    description: 'Sophisticated jet black finish bib cock with wall flange, featuring 20mm ceramic cartridge.',
+    price: 6999,
+    originalPrice: 9999,
+    description: 'Modern matt black basin mixer with sleek design and advanced cartridge technology.',
     features: [
-      '7 Years Warranty',
-      'Premium Jet Black Finish',
-      'High Quality Ceramic Disc',
-      'Corrosion Resistant'
+      'Matt Black Premium Finish',
+      'Ceramic Cartridge - 5 Lakh Operations',
+      'Single Lever Operation',
+      'Water Saving Aerator',
+      'Contemporary Design'
     ],
     specifications: {
-      'Catalogue No': 'BL-2401',
-      '20MM Ceramic Cartridge': '',
-      'Brass Body Construction': '',
-      'Jet Black Premium Finish': '',
-      'Quarter Turn Operation': ''
+      'Material': 'Brass with Black Coating',
+      'Cartridge': '40mm Ceramic',
+      'Water Pressure': '0.5 to 5 Bar',
+      'Flow Rate': '6-8 LPM',
+      'Warranty': '7 Years',
+      'Finish': 'Matt Black'
     },
     images: [
-      '/images/products/ganga/flort-prime-jet-black/BL-2401-bib-cock.jpg'
+      'https://picsum.photos/500/500?random=25',
+      'https://picsum.photos/500/500?random=26'
     ],
     inStock: true,
     rating: 4.6,
     reviewCount: 134,
-    tags: ['premium', 'jet-black', 'flort-prime', 'bib-cock'],
-    warranty: '7 Years'
+    tags: ['modern', 'black', 'basin mixer', 'flort'],
+    warranty: '7 Years Manufacturing Warranty'
   },
+
   {
-    id: 'flort-prime-jet-black-pillar-cock',
-    name: 'Flort Prime Jet Black Pillar Cock',
+    id: 'flort-prime-jet-black-shower-mixer',
+    name: 'Flort Prime Jet Black Shower Mixer',
     category: 'cp-fittings',
-    subcategory: 'Basin Mixers',
+    subcategory: 'Shower Mixers',
     collection: 'Flort Prime Jet Black',
-    price: 3319,
-    originalPrice: 3905,
-    description: 'Elegant jet black finish pillar cock with premium ceramic cartridge.',
+    price: 7999,
+    originalPrice: 11999,
+    description: 'Contemporary black shower mixer with anti-scald technology and pressure balancing.',
     features: [
-      '7 Years Warranty',
-      'Premium Jet Black Finish',
-      'High Flow Design',
-      'Durable Construction'
+      'Matt Black Premium Finish',
+      'Anti-Scald Technology',
+      'Pressure Balancing Cartridge',
+      'Easy Clean Aerator',
+      'Wall Mount Installation'
     ],
     specifications: {
-      'Catalogue No': 'BL-2402',
-      '20MM Ceramic Cartridge': '',
-      'Jet Black Premium Finish': '',
-      'Brass Body Construction': ''
+      'Material': 'Brass with Black Coating',
+      'Cartridge': '35mm Pressure Balance',
+      'Flow Rate': '8-12 LPM',
+      'Inlet': '15mm (1/2")',
+      'Warranty': '7 Years',
+      'Finish': 'Matt Black'
     },
     images: [
-      '/images/products/ganga/flort-prime-jet-black/BL-2402-pillar-cock.jpg'
+      'https://picsum.photos/500/500?random=27',
+      'https://picsum.photos/500/500?random=28'
     ],
     inStock: true,
     rating: 4.7,
     reviewCount: 203,
-    tags: ['premium', 'jet-black', 'flort-prime', 'pillar-cock'],
-    warranty: '7 Years'
-  },
-  {
-    id: 'flort-prime-jet-black-basin-mixer',
-    name: 'Flort Prime Jet Black Single Lever Basin Mixer',
-    category: 'cp-fittings',
-    subcategory: 'Basin Mixers',
-    collection: 'Flort Prime Jet Black',
-    price: 4730,
-    originalPrice: 5565,
-    description: 'Premium single lever basin mixer with 450mm braided hoses in jet black finish.',
-    features: [
-      '7 Years Warranty',
-      'Easy Single Lever Control',
-      'Premium Jet Black Finish',
-      'High Quality Hoses'
-    ],
-    specifications: {
-      'Catalogue No': 'BL-2419',
-      '450mm Braided Hoses': '',
-      'Jet Black Premium Finish': '',
-      'Single Lever Operation': ''
-    },
-    images: [
-      '/images/products/ganga/flort-prime-jet-black/BL-2419-basin-mixer.jpg'
-    ],
-    inStock: true,
-    rating: 4.6,
-    reviewCount: 156,
-    tags: ['premium', 'jet-black', 'flort-prime', 'basin-mixer'],
-    warranty: '7 Years'
-  },
-  {
-    id: 'flort-prime-jet-black-flush-valve',
-    name: 'Flort Prime Jet Black Metropole Flush Valve',
-    category: 'cp-fittings',
-    subcategory: 'Flush Systems',
-    collection: 'Flort Prime Jet Black',
-    price: 6753,
-    originalPrice: 7945,
-    description: 'Concealed body metropole flush valve with control cock and jet black operation plate.',
-    features: [
-      '7 Years Warranty',
-      'Concealed Installation',
-      'Premium Jet Black Operation Plate',
-      'High Performance'
-    ],
-    specifications: {
-      'Catalogue No': 'BL-051',
-      '40MM Control Cock': '',
-      '1.5" Operation Plate': '',
-      'Concealed Body Design': ''
-    },
-    images: [
-      '/images/products/ganga/flort-prime-jet-black/BL-051-flush-valve.jpg'
-    ],
-    inStock: true,
-    rating: 4.7,
-    reviewCount: 203,
-    tags: ['premium', 'jet-black', 'flort-prime', 'flush-valve'],
-    warranty: '7 Years'
+    tags: ['modern', 'black', 'shower', 'premium'],
+    warranty: '7 Years Manufacturing Warranty'
   },
 
   // Italian Collection
   {
-    id: 'italian-thermostatic-mixer',
-    name: 'Italian Collection Concealed 2 Way Thermostatic Mixer',
+    id: 'italian-sensor-basin-tap',
+    name: 'Italian Collection Sensor Basin Tap',
     category: 'cp-fittings',
-    subcategory: 'Shower Mixers',
+    subcategory: 'Sensor Taps',
     collection: 'Italian Collection',
-    price: 26656,
-    originalPrice: 31360,
-    description: 'Premium concealed 2 way high flow bath & shower mixer with thermostatic control cartridge.',
+    price: 12999,
+    originalPrice: 17999,
+    description: 'Touchless sensor tap with Italian design and smart technology for hygiene and convenience.',
     features: [
-      '1 Year Warranty',
-      'Thermostatic Temperature Control',
-      'Safety Features',
-      'High Flow Design',
-      'Italian Engineering'
+      'Infrared Sensor Technology',
+      'Battery Operated (4 AA)',
+      'Adjustable Sensor Range',
+      'Water Saving Technology',
+      'Vandal Resistant Design',
+      'Automatic Shut-off'
     ],
     specifications: {
-      'Catalogue No': 'SP3003',
-      'Concealed 2 Way High Flow': '',
-      'Thermostatic Control Cartridge': '',
-      'Temperature Control': '',
-      'Safety Cut-off at 38°C': ''
+      'Material': 'Brass with Chrome Finish',
+      'Sensor Range': '5-15 cm (Adjustable)',
+      'Battery Life': '2-3 Years',
+      'Flow Rate': '6 LPM at 3 Bar',
+      'Warranty': '5 Years',
+      'Finish': 'Mirror Chrome'
     },
     images: [
-      '/images/products/ganga/italian-collection/SP3003-thermostatic-mixer.jpg'
+      'https://picsum.photos/500/500?random=29',
+      'https://picsum.photos/500/500?random=30'
     ],
     inStock: true,
     rating: 4.6,
     reviewCount: 124,
-    tags: ['premium', 'italian', 'thermostatic', 'mixer'],
-    warranty: '1 Year'
+    tags: ['sensor', 'touchless', 'smart', 'italian', 'hygiene'],
+    warranty: '5 Years Sensor & Mechanical Warranty'
   },
+
   {
-    id: 'italian-3way-mixer',
-    name: 'Italian Collection Concealed 3 Way Thermostatic Mixer',
+    id: 'italian-automatic-urinal-flush',
+    name: 'Italian Collection Automatic Urinal Flush',
     category: 'cp-fittings',
-    subcategory: 'Shower Mixers',
+    subcategory: 'Sensor Taps',
     collection: 'Italian Collection',
-    price: 31497,
-    originalPrice: 37055,
-    description: 'Premium concealed 3 way high flow bath & shower mixer with thermostatic control.',
+    price: 15999,
+    originalPrice: 21999,
+    description: 'Automatic urinal flush valve with sensor technology for commercial and residential use.',
     features: [
-      '1 Year Warranty',
-      '3 Way Control',
-      'Thermostatic Temperature Control',
-      'Italian Engineering',
-      'Premium Quality'
+      'PIR Sensor Technology',
+      'Adjustable Flush Time',
+      'Water Saving Design',
+      'Vandal Proof Construction',
+      'Easy Installation'
     ],
     specifications: {
-      'Catalogue No': 'SP3004',
-      'Concealed 3 Way High Flow': '',
-      'Thermostatic Control Cartridge': '',
-      'Temperature Control': '',
-      'Multiple Outlet Control': ''
+      'Material': 'Brass with Chrome Finish',
+      'Sensor Type': 'PIR Motion Sensor',
+      'Flush Time': '1-10 seconds (Adjustable)',
+      'Water Pressure': '0.5 to 8 Bar',
+      'Warranty': '5 Years',
+      'Power': '6V DC (4 AA Batteries)'
     },
     images: [
-      '/images/products/ganga/italian-collection/SP3004-3way-mixer.jpg'
+      'https://picsum.photos/500/500?random=31',
+      'https://picsum.photos/500/500?random=32'
     ],
     inStock: true,
     rating: 4.5,
     reviewCount: 67,
-    tags: ['premium', 'italian', 'thermostatic', '3-way', 'mixer'],
-    warranty: '1 Year'
+    tags: ['sensor', 'urinal', 'automatic', 'commercial'],
+    warranty: '5 Years Comprehensive Warranty'
   },
 
   // Elegance Collection
   {
-    id: 'elegance-bib-cock',
-    name: 'Elegance Bib Cock with Wall Flange',
+    id: 'elegance-thermostatic-divertor',
+    name: 'Elegance Thermostatic Divertor',
+    category: 'cp-fittings',
+    subcategory: 'Divertors',
+    collection: 'Elegance',
+    price: 15999,
+    originalPrice: 21999,
+    description: 'Advanced thermostatic divertor with temperature control and safety features for premium bathrooms.',
+    features: [
+      'Thermostatic Temperature Control',
+      'Anti-Scald Safety Lock',
+      '3-Way Divertor Function',
+      'Chrome Plated Finish',
+      'Concealed Installation',
+      'Pressure Balancing'
+    ],
+    specifications: {
+      'Material': 'Brass Body, Chrome Plated',
+      'Temperature Range': '20°C to 50°C',
+      'Pressure': '1 to 5 Bar',
+      'Connections': '3-Way Divertor',
+      'Warranty': '12 Years',
+      'Finish': 'High Gloss Chrome'
+    },
+    images: [
+      'https://picsum.photos/500/500?random=33',
+      'https://picsum.photos/500/500?random=34'
+    ],
+    inStock: true,
+    rating: 4.9,
+    reviewCount: 89,
+    tags: ['thermostatic', 'premium', 'safety', 'divertor'],
+    warranty: '12 Years Premium Warranty'
+  },
+
+  {
+    id: 'elegance-basin-mixer-chrome',
+    name: 'Elegance Basin Mixer Chrome',
     category: 'cp-fittings',
     subcategory: 'Basin Mixers',
     collection: 'Elegance',
-    price: 1534,
-    originalPrice: 1805,
-    description: 'Classic elegance bib cock with wall flange, featuring 20mm cartridge.',
+    price: 4999,
+    originalPrice: 7499,
+    description: 'Classic chrome basin mixer with timeless design and reliable performance.',
     features: [
-      '7 Years Warranty',
-      'Classic Design',
-      'Chrome Finish',
-      'Reliable Performance'
+      'High Gloss Chrome Finish',
+      'Ceramic Cartridge',
+      'Single Lever Operation',
+      'Water Saving Aerator',
+      'Easy Maintenance'
     ],
     specifications: {
-      'Catalogue No': '701',
-      '20MM Cartridge': '',
-      'Brass Body': '',
-      'Chrome Finish': '',
-      'Wall Flange Included': ''
+      'Material': 'Brass with Chrome Plating',
+      'Cartridge': '40mm Ceramic',
+      'Water Pressure': '0.5 to 5 Bar',
+      'Flow Rate': '6-8 LPM',
+      'Warranty': '7 Years',
+      'Finish': 'High Gloss Chrome'
     },
     images: [
-      '/images/products/ganga/elegance/701-bib-cock.jpg'
+      'https://picsum.photos/500/500?random=35',
+      'https://picsum.photos/500/500?random=36'
     ],
     inStock: true,
     rating: 4.5,
     reviewCount: 178,
-    tags: ['elegance', 'chrome', 'bib-cock', 'classic'],
-    warranty: '7 Years'
-  },
-  {
-    id: 'elegance-sink-mixer',
-    name: 'Elegance Sink Mixer with Regular Swinging Spout',
-    category: 'cp-fittings',
-    subcategory: 'Sink Mixers',
-    collection: 'Elegance',
-    price: 4977,
-    originalPrice: 5855,
-    description: 'Premium sink mixer with regular swinging spout for kitchen and utility areas.',
-    features: [
-      '7 Years Warranty',
-      'Swinging Spout Design',
-      'Easy Operation',
-      'Chrome Finish'
-    ],
-    specifications: {
-      'Catalogue No': '712',
-      'Regular Swinging Spout': '',
-      'Wall Mounted': '',
-      'Chrome Finish': '',
-      '20MM Cartridge': ''
-    },
-    images: [
-      '/images/products/ganga/elegance/712-sink-mixer.jpg'
-    ],
-    inStock: true,
-    rating: 4.6,
-    reviewCount: 156,
-    tags: ['elegance', 'sink-mixer', 'chrome', 'swinging-spout'],
-    warranty: '7 Years'
-  },
-  {
-    id: 'elegance-wall-mixer',
-    name: 'Elegance Wall Mixer with Bend for Overhead Shower',
-    category: 'cp-fittings',
-    subcategory: 'Wall Mixers',
-    collection: 'Elegance',
-    price: 6031,
-    originalPrice: 7095,
-    description: 'Wall mixer with bend for overhead shower arrangement in classic elegance design.',
-    features: [
-      '7 Years Warranty',
-      'Overhead Shower Support',
-      'Classic Design',
-      'Chrome Finish'
-    ],
-    specifications: {
-      'Catalogue No': '716',
-      'Overhead Shower Arrangement': '',
-      'Wall Mounted': '',
-      'Chrome Finish': '',
-      'Bend Included': ''
-    },
-    images: [
-      '/images/products/ganga/elegance/716-wall-mixer.jpg'
-    ],
-    inStock: true,
-    rating: 4.7,
-    reviewCount: 123,
-    tags: ['elegance', 'wall-mixer', 'overhead-shower', 'chrome'],
-    warranty: '7 Years'
-  },
-  {
-    id: 'elegance-flush-cock',
-    name: 'Elegance Flush Cock with Washer System',
-    category: 'cp-fittings',
-    subcategory: 'Flush Systems',
-    collection: 'Elegance',
-    price: 2975,
-    originalPrice: 3500,
-    description: 'Flush cock with washer system and adjustable wall flange (25mm).',
-    features: [
-      '7 Years Warranty',
-      'Washer System',
-      '25mm Adjustable Wall Flange',
-      'Reliable Performance'
-    ],
-    specifications: {
-      'Catalogue No': '721',
-      'Washer System': '',
-      '25mm Adjustable Wall Flange': '',
-      'Chrome Finish': '',
-      'Heavy Duty': ''
-    },
-    images: [
-      '/images/products/ganga/elegance/721-flush-cock.jpg'
-    ],
-    inStock: true,
-    rating: 4.5,
-    reviewCount: 123,
-    tags: ['elegance', 'flush-cock', 'washer-system', 'chrome'],
-    warranty: '7 Years'
+    tags: ['classic', 'chrome', 'basin mixer', 'elegance'],
+    warranty: '7 Years Manufacturing Warranty'
   },
 
-  // Tora SS Collection
+  // Tora SS Shower Collection
   {
-    id: 'tora-ss-overhead-shower',
-    name: 'Tora SS Overhead Shower 8x8 Square with Arm & Flange',
+    id: 'tora-ss-rain-shower-200mm',
+    name: 'Tora SS Rain Shower Head 200mm',
     category: 'shower-systems',
-    subcategory: 'Overhead Showers',
+    subcategory: 'Rain Showers',
     collection: 'Tora SS',
-    price: 3149,
-    originalPrice: 3705,
-    description: 'Premium stainless steel overhead shower 8x8 square with 18" arm and flange.',
+    price: 4999,
+    originalPrice: 7499,
+    description: 'Stainless steel rain shower head with even water distribution and ultra-thin profile.',
     features: [
-      'No Warranty',
-      'Stainless Steel Construction',
-      'Large 8x8 Coverage',
-      '18" Arm Length',
-      'Pixel Shower Design'
+      '304 Grade Stainless Steel',
+      'Ultra-Thin 8mm Profile',
+      'Anti-Lime Scale Nozzles',
+      'Easy Installation',
+      'Rust & Corrosion Resistant',
+      'Even Water Distribution'
     ],
     specifications: {
-      '8x8 Square Design': '',
-      'SS 304 Construction': '',
-      '18" Shower Arm': '',
-      'Wall Flange Included': '',
-      'Pixel Shower Technology': ''
+      'Material': '304 Grade Stainless Steel',
+      'Size': '200mm x 200mm',
+      'Thickness': '8mm Ultra-Thin',
+      'Connection': '15mm (1/2") Thread',
+      'Warranty': '15 Years',
+      'Finish': 'Brushed Steel'
     },
     images: [
-      '/images/products/ganga/tora-ss/overhead-shower-8x8.jpg'
+      'https://picsum.photos/500/500?random=37',
+      'https://picsum.photos/500/500?random=38'
     ],
     inStock: true,
     rating: 4.8,
     reviewCount: 267,
-    tags: ['tora-ss', 'overhead-shower', 'stainless-steel', '8x8'],
-    warranty: 'No Warranty'
+    tags: ['rain shower', 'stainless steel', 'durable', 'premium'],
+    warranty: '15 Years Anti-Rust Warranty'
   },
 
-  // LEXOR 3D Collection
   {
-    id: 'lexor-3d-smart-toilet',
-    name: 'LEXOR 3D Smart Toilet Floor Mounted',
-    category: 'sanitary-ware',
-    subcategory: 'Toilets',
-    collection: 'LEXOR 3D',
-    price: 18999,
-    originalPrice: 22999,
-    description: 'Advanced 3D smart toilet with modern features and floor mounted design.',
+    id: 'tora-ss-rain-shower-300mm',
+    name: 'Tora SS Rain Shower Head 300mm',
+    category: 'shower-systems',
+    subcategory: 'Rain Showers',
+    collection: 'Tora SS',
+    price: 7999,
+    originalPrice: 11999,
+    description: 'Large 300mm stainless steel rain shower for luxury bathroom experience.',
     features: [
-      'Smart Technology',
-      'Water Efficient',
-      'Modern Design',
-      'Easy Maintenance',
-      'Premium Quality'
+      '304 Grade Stainless Steel',
+      'Ultra-Thin 10mm Profile',
+      'Anti-Lime Scale Nozzles',
+      'Large Coverage Area',
+      'Premium Finish'
     ],
     specifications: {
-      'Floor Mounted Design': '',
-      '3D Smart Technology': '',
-      'Advanced Flushing System': '',
-      'Modern Design': '',
-      'Easy Installation': ''
+      'Material': '304 Grade Stainless Steel',
+      'Size': '300mm x 300mm',
+      'Thickness': '10mm Ultra-Thin',
+      'Connection': '15mm (1/2") Thread',
+      'Warranty': '15 Years',
+      'Finish': 'Brushed Steel'
     },
     images: [
-      '/images/products/ganga/lexor-3d/smart-toilet-floor-mounted.jpg'
+      'https://picsum.photos/500/500?random=39',
+      'https://picsum.photos/500/500?random=40'
     ],
     inStock: true,
-    rating: 4.7,
-    reviewCount: 98,
-    tags: ['lexor-3d', 'smart-toilet', 'floor-mounted', '3d-technology'],
-    warranty: '7 Years'
+    rating: 4.9,
+    reviewCount: 145,
+    tags: ['rain shower', 'large', 'luxury', 'stainless steel'],
+    warranty: '15 Years Anti-Rust Warranty'
   },
 
   // Ganga Sanitary Ware

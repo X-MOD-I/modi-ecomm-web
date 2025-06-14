@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import-csv": "node scripts/csv-to-products.js",
+    "import-ganga": "node scripts/csv-to-products.js ganga_all_products50.csv src/data/ganga-products.ts",
+    "import-tora": "node scripts/csv-to-products.js tora_ss_shower_products.csv src/data/tora-products.ts",
+    "merge-products": "node scripts/merge-products.js"
   },
   "dependencies": {
     "@types/node": "^24.0.1",

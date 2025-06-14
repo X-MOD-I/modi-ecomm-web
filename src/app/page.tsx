@@ -111,7 +111,7 @@ export default function HomePage() {
                   <img
                     src={product.images[0]}
                     alt={product.name}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-64 object-contain bg-gray-50 p-2"
                   />
                   {product.originalPrice && (
                     <div className="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 rounded text-sm font-semibold">

@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
 import { Search, Filter, Phone, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react'
 import { allProducts, productCategories } from '@/data/products'
 import Header from '@/components/Header'
@@ -10,11 +11,20 @@ import Footer from '@/components/Footer'
 const PRODUCTS_PER_PAGE = 20
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedSubcategory, setSelectedSubcategory] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
   const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 })
+
+  // Initialize search term from URL parameters
+  useEffect(() => {
+    const searchQuery = searchParams.get('search')
+    if (searchQuery) {
+      setSearchTerm(searchQuery)
+    }
+  }, [searchParams])
 
   // Filter products based on search and filters
   const filteredProducts = useMemo(() => {
@@ -57,7 +67,7 @@ export default function ProductsPage() {
   // WhatsApp message generator
   const generateWhatsAppMessage = (product: any) => {
     const message = `Hi! I'm interested in ${product.name} (₹${product.price.toLocaleString()}). Can you provide more details and availability?`
-    return `https://wa.me/919876543210?text=${encodeURIComponent(message)}`
+    return `https://wa.me/919414479697?text=${encodeURIComponent(message)}`
   }
 
   // Pagination component
@@ -204,7 +214,7 @@ export default function ProductsPage() {
                   src={product.images[0]}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-contain p-2"
                   onError={(e) => {
                     const img = e.target as HTMLImageElement;
                     img.src = `/api/placeholder/400/300?text=${encodeURIComponent(product.name)}`;

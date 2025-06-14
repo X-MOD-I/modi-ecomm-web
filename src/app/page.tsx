@@ -224,45 +224,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="w-full px-4 lg:px-8 xl:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="https://picsum.photos/600/400?random=5"
-                alt="Our showroom"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">About Bath Gallery Store</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                With over 30 years of experience in the bathroom fittings industry, we've been helping homeowners
-                and contractors create beautiful, functional bathrooms across India.
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Our extensive showroom features the latest in bath technology, from traditional fixtures to
-                modern smart bathroom solutions. We pride ourselves on quality products and exceptional customer service.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/about" className="btn-primary">
-                  Learn More About Us
-                </Link>
-                <a
-                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("I'd like to schedule a showroom visit. When are you available?")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary flex items-center justify-center"
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Schedule Visit
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <Footer />
     </div>

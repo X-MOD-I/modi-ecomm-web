@@ -5,8 +5,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto section-padding py-12">
+    <footer className="bg-gray-900 text-white w-full">
+      <div className="w-full px-4 lg:px-8 xl:px-12 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
@@ -205,8 +205,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-gray-800 py-4">
-        <div className="max-w-7xl mx-auto section-padding">
+      <div className="bg-gray-800 py-4 w-full">
+        <div className="w-full px-4 lg:px-8 xl:px-12">
           <div className="md:flex md:items-center md:justify-between">
             <p className="text-gray-400 text-sm">
               © {currentYear} New Modi Iron. All rights reserved.

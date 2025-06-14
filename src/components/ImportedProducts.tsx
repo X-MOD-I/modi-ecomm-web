@@ -101,7 +101,7 @@ const ImportedProducts = () => {
             {/* Products Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
                 {displayedProducts.map((product: Product) => (
-                    <div key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <div key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col h-full">
                         {/* Product Image */}
                         <div className="relative h-48 bg-gray-100">
                             <Image
@@ -127,7 +127,7 @@ const ImportedProducts = () => {
                         </div>
 
                         {/* Product Info */}
-                        <div className="p-4">
+                        <div className="flex flex-col flex-1 p-4">
                             <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
                                 {product.name}
                             </h3>
@@ -181,18 +181,18 @@ const ImportedProducts = () => {
                             </div>
 
                             {/* Action Buttons */}
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 mt-auto">
                                 <a
                                     href={generateWhatsAppMessage(product)}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex-1 bg-green-500 hover:bg-green-600 text-white text-center py-2 px-3 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-1"
+                                    className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2"
                                 >
-                                    <MessageCircle className="h-4 w-4" />
-                                    WhatsApp
+                                    <MessageCircle className="w-4 h-4" />
+                                    Get Quote
                                 </a>
-                                <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-1">
-                                    <Phone className="h-4 w-4" />
+                                <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2">
+                                    <Phone className="w-4 h-4" />
                                     Call
                                 </button>
                             </div>

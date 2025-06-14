@@ -197,7 +197,7 @@ export default function ProductsPage() {
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
           {paginatedProducts.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+            <div key={product.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col h-full">
               {/* Product Image */}
               <div className="relative h-48 bg-gray-100">
                 <Image
@@ -223,15 +223,13 @@ export default function ProductsPage() {
               </div>
 
               {/* Product Info */}
-              <div className="p-4">
+              <div className="flex flex-col flex-1 p-4">
                 <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 text-sm">
                   {product.name}
                 </h3>
-
                 <p className="text-xs text-gray-600 mb-3 line-clamp-2">
                   {product.description}
                 </p>
-
                 {/* Price */}
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-lg font-bold text-green-600">
@@ -243,15 +241,13 @@ export default function ProductsPage() {
                     </span>
                   )}
                 </div>
-
                 {/* Rating */}
                 <div className="flex items-center gap-1 mb-3">
                   <div className="flex">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <span
                         key={star}
-                        className={`text-xs ${star <= Math.round(product.rating) ? 'text-yellow-400' : 'text-gray-300'
-                          }`}
+                        className={`text-xs ${star <= Math.round(product.rating) ? 'text-yellow-400' : 'text-gray-300'}`}
                       >
                         ★
                       </span>
@@ -261,20 +257,21 @@ export default function ProductsPage() {
                     ({product.reviewCount})
                   </span>
                 </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-2">
+                <div className="mb-4">
+                  {/* Features, etc. */}
+                </div>
+                <div className="flex gap-2 mt-auto">
                   <a
                     href={generateWhatsAppMessage(product)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-green-500 hover:bg-green-600 text-white text-center py-2 px-3 rounded-lg text-xs font-medium transition-colors duration-200 flex items-center justify-center gap-1"
+                    className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2"
                   >
-                    <MessageCircle className="h-3 w-3" />
-                    WhatsApp
+                    <MessageCircle className="w-4 h-4" />
+                    Get Quote
                   </a>
-                  <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 px-3 rounded-lg text-xs font-medium transition-colors duration-200 flex items-center justify-center gap-1">
-                    <Phone className="h-3 w-3" />
+                  <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2">
+                    <Phone className="w-4 h-4" />
                     Call
                   </button>
                 </div>

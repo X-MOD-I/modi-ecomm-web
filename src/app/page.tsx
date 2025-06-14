@@ -8,10 +8,10 @@ import InquiryForm from '@/components/InquiryForm'
 import { featuredProducts } from '@/data/products'
 
 export default function HomePage() {
-  const whatsappNumber = "919876543210"
+  const whatsappNumber = "919414479697"
 
   const handleProductInquiry = (productName: string, price: string) => {
-    const message = `Hi! I'm interested in the ${productName} (${price}). Could you please provide more details and a quote?`
+    const message = `Hi! I'm interested in the ${productName} (${price}) from New Modi Iron. Could you please provide more details and a quote?`
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
@@ -21,23 +21,29 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
+      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div className="absolute inset-0">
+          <img
+            src="https://gangabathfittings.com/wp-content/uploads/2023/06/101-450x450.jpg"
+            alt="Premium Bath Fittings"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
         <div className="relative w-full px-4 lg:px-8 xl:px-12 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                Transform Your <span className="text-accent-400">Bathroom</span> Experience
+                Premium <span className="text-accent-400">Bath Fittings</span> & Sanitary Products
               </h1>
               <p className="text-xl mb-8 text-blue-100">
-                Authorized dealer of Ganga Bath Fittings - India's largest bath fittings manufacturer.
-                Premium quality products with 5-15 years warranty. Your trusted partner since 1995.
+                Authorized dealer of Ganga Bath Fittings and TORA Showers.
+                Premium quality products with 5-15 years warranty. Your trusted partner for pipe fittings, C.P. fittings, tiles, and sanitary products.
               </p>
               <div className="flex flex-wrap gap-4 text-sm mb-8">
                 <span className="bg-blue-800 px-4 py-2 rounded-full">40+ Premium Collections</span>
                 <span className="bg-blue-800 px-4 py-2 rounded-full">5-15 Years Warranty</span>
-                <span className="bg-blue-800 px-4 py-2 rounded-full">Pan India Delivery</span>
                 <span className="bg-blue-800 px-4 py-2 rounded-full">Expert Installation</span>
+                <span className="bg-blue-800 px-4 py-2 rounded-full">Quality Guaranteed</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/products" className="btn-primary text-center">
@@ -49,11 +55,11 @@ export default function HomePage() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <div className="card">
+              <div className="card bg-white/10 backdrop-blur-sm p-4">
                 <img
-                  src="https://picsum.photos/500/400?random=4"
-                  alt="Luxury bathroom showcase"
-                  className="w-full h-96 object-cover"
+                  src="https://gangabathfittings.com/wp-content/uploads/2023/12/02-1.jpg"
+                  alt="Premium Bath Fittings Collection"
+                  className="w-full h-96 object-cover rounded-lg"
                 />
               </div>
             </div>
@@ -100,7 +106,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-8">
             {featuredProducts.slice(0, 6).map((product) => (
-              <div key={product.id} className="card hover:shadow-lg transition-shadow duration-300 relative">
+              <div key={product.id} className="card hover:shadow-lg transition-shadow duration-300 relative flex flex-col h-full">
                 <div className="relative">
                   <img
                     src={product.images[0]}
@@ -116,7 +122,7 @@ export default function HomePage() {
                     {product.warranty}
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="flex flex-col flex-1 p-6">
                   <div className="mb-2">
                     <span className="text-sm text-blue-600 font-medium">{product.collection || product.subcategory}</span>
                   </div>
@@ -132,7 +138,6 @@ export default function HomePage() {
                     </div>
                     <span className="text-sm text-gray-600 ml-2">({product.reviewCount})</span>
                   </div>
-
                   {/* Features */}
                   <ul className="text-sm text-gray-600 mb-4 space-y-1">
                     {product.features.slice(0, 3).map((feature, idx) => (
@@ -142,8 +147,7 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-
-                  <div className="mb-4">
+                  <div className="flex items-center gap-2 mb-3">
                     <span className="text-xl font-bold text-primary-600">₹{product.price.toLocaleString()}</span>
                     {product.originalPrice && (
                       <span className="text-sm text-gray-500 line-through ml-2">₹{product.originalPrice.toLocaleString()}</span>
@@ -151,9 +155,9 @@ export default function HomePage() {
                   </div>
                   <button
                     onClick={() => handleProductInquiry(product.name, `₹${product.price.toLocaleString()}`)}
-                    className="w-full btn-primary flex items-center justify-center"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2 mt-auto"
                   >
-                    <MessageCircle className="w-4 h-4 mr-2" />
+                    <MessageCircle className="w-4 h-4" />
                     Get Quote on WhatsApp
                   </button>
                 </div>

@@ -19,7 +19,7 @@ export default function Header() {
   ]
 
   const whatsappNumber = "919414479697"
-  const whatsappMessage = "Hello! I'm interested in pipe fittings, C.P. fittings, tiles and sanitary products. Could you please help me?"
+  const whatsappMessage = "Hello! I'm interested in pipe fittings, C.P. fittings, tiles and sanitary products from New Modi Iron. Could you please help me?"
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -68,7 +68,7 @@ export default function Header() {
                 <ShoppingBag className="w-7 h-7" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
+                <h1 className="text-3xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
                   New Modi Iron
                 </h1>
                 <p className="text-sm text-gray-600 font-medium">न्यू मोदी आयरन • Pipe Fittings, C.P. Fittings, Tiles & Sanitary</p>

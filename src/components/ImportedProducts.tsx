@@ -44,7 +44,7 @@ const ImportedProducts = () => {
 
     // WhatsApp message generator
     const generateWhatsAppMessage = (product: Product) => {
-        const message = `Hi! I'm interested in ${product.name} (₹${product.price}). Can you provide more details and availability?`
+        const message = `Hi! I&apos;m interested in ${product.name} (₹${product.price}). Can you provide more details and availability?`
         return `https://wa.me/919876543210?text=${encodeURIComponent(message)}`
     }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { MessageCircle, Star, Truck, Shield, Phone, Mail, MapPin } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -23,10 +24,12 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white w-full">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="https://gangabathfittings.com/wp-content/uploads/2023/06/101-450x450.jpg"
             alt="Premium Bath Fittings"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            className="object-cover opacity-20"
+            priority
           />
         </div>
         <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-32">
@@ -56,9 +59,11 @@ export default function HomePage() {
             </div>
             <div className="hidden lg:block">
               <div className="card bg-white/10 backdrop-blur-sm p-4">
-                <img
+                <Image
                   src="https://gangabathfittings.com/wp-content/uploads/2023/12/02-1.jpg"
                   alt="Premium Bath Fittings Collection"
+                  width={600}
+                  height={400}
                   className="w-full h-96 object-cover rounded-lg"
                 />
               </div>
@@ -108,9 +113,11 @@ export default function HomePage() {
             {featuredProducts.slice(0, 6).map((product) => (
               <div key={product.id} className="card hover:shadow-lg transition-shadow duration-300 relative flex flex-col h-full">
                 <div className="relative">
-                  <img
+                  <Image
                     src={product.images[0]}
                     alt={product.name}
+                    width={400}
+                    height={300}
                     className="w-full h-48 sm:h-64 object-contain bg-gray-50 p-2"
                   />
                   {product.originalPrice && (
@@ -180,7 +187,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Get a Custom Quote</h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
-                Have specific requirements? Send us your details and we'll provide you with a customized quote
+                Have specific requirements? Send us your details and we&apos;ll provide you with a customized quote
                 within 24 hours. Our experts will help you choose the best products for your space and budget.
               </p>
 

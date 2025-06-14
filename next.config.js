@@ -1,10 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'localhost',
-      'gangabathfittings.com',  // For your real product images
-      'picsum.photos'           // For fallback placeholder images
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'gangabathfittings.com',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 }

@@ -50,10 +50,13 @@ import { csvImportedProducts as gangaProducts } from './ganga-products'
 import { csvImportedProducts as toraProducts } from './tora-products'
 
 // All your real product data from CSV files
-export const featuredProducts: Product[] = [
+export const allProducts: Product[] = [
     ...gangaProducts,
     ...toraProducts
 ]
+
+// Featured products for homepage (limited for performance)
+export const featuredProducts: Product[] = allProducts.slice(0, 50)
 
 // Product collections based on your real data
 export const productCollections = [
@@ -63,7 +66,7 @@ export const productCollections = [
         description: 'Premium bathroom fittings with elegant design',
         priceRange: '₹800 - ₹2,500',
         image: 'https://gangabathfittings.com/wp-content/uploads/2023/07/Elegance-Collection.jpg',
-        productCount: featuredProducts.filter(p => p.collection === 'Elegance Collection').length
+        productCount: allProducts.filter(p => p.collection === 'Elegance Collection').length
     },
     {
         id: 'ultra-slim-collection',
@@ -71,7 +74,7 @@ export const productCollections = [
         description: 'Sleek and modern ultra-slim designs',
         priceRange: '₹900 - ₹2,800',
         image: 'https://gangabathfittings.com/wp-content/uploads/2023/07/Ultraslim-Collection.jpg',
-        productCount: featuredProducts.filter(p => p.collection === 'Ultra Slim Collection').length
+        productCount: allProducts.filter(p => p.collection === 'Ultra Slim Collection').length
     },
     {
         id: 'waterfall-collection',
@@ -79,7 +82,7 @@ export const productCollections = [
         description: 'Luxurious waterfall-style fittings',
         priceRange: '₹1,200 - ₹3,500',
         image: 'https://gangabathfittings.com/wp-content/uploads/2023/06/WS3-10.jpg',
-        productCount: featuredProducts.filter(p => p.collection === 'WaterFall Collection').length
+        productCount: allProducts.filter(p => p.collection === 'WaterFall Collection').length
     },
     {
         id: 'maze-collection',
@@ -87,7 +90,7 @@ export const productCollections = [
         description: 'Sophisticated maze pattern designs',
         priceRange: '₹1,000 - ₹3,000',
         image: 'https://gangabathfittings.com/wp-content/uploads/2023/06/MS3-8.jpg',
-        productCount: featuredProducts.filter(p => p.collection === 'Maze Collection').length
+        productCount: allProducts.filter(p => p.collection === 'Maze Collection').length
     }
 ]
 
@@ -117,9 +120,27 @@ export const filterProductsByPriceRange = (products: Product[], min: number, max
 }
 
 export const getProductsByCategory = (category: string): Product[] => {
-    return filterProductsByCategory(featuredProducts, category)
+    return filterProductsByCategory(allProducts, category)
 }
 
 export const getFeaturedProductsByCollection = (collection: string): Product[] => {
-    return filterProductsByCollection(featuredProducts, collection)
+    return filterProductsByCollection(allProducts, collection)
+}
+
+// Get paginated products for better performance
+export const getPaginatedProducts = (page: number = 1, limit: number = 20): {
+    products: Product[]
+    totalProducts: number
+    totalPages: number
+    currentPage: number
+} => {
+    const startIndex = (page - 1) * limit
+    const endIndex = startIndex + limit
+
+    return {
+        products: allProducts.slice(startIndex, endIndex),
+        totalProducts: allProducts.length,
+        totalPages: Math.ceil(allProducts.length / limit),
+        currentPage: page
+    }
 } 

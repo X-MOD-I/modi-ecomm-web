@@ -53,10 +53,10 @@ export default function ProductsPage() {
   // Get unique subcategories for current category
   const subcategories = useMemo(() => {
     if (selectedCategory === 'all') return []
-    return [...new Set(allProducts
+    return Array.from(new Set(allProducts
       .filter(p => p.category === selectedCategory)
       .map(p => p.subcategory)
-      .filter(Boolean))]
+      .filter(Boolean)))
   }, [selectedCategory])
 
   // Reset page when filters change
@@ -66,7 +66,7 @@ export default function ProductsPage() {
 
   // WhatsApp message generator
   const generateWhatsAppMessage = (product: any) => {
-    const message = `Hi! I'm interested in ${product.name} (₹${product.price.toLocaleString()}). Can you provide more details and availability?`
+    const message = `Hi! I&apos;m interested in ${product.name} (₹${product.price.toLocaleString()}). Can you provide more details and availability?`
     return `https://wa.me/919414479697?text=${encodeURIComponent(message)}`
   }
 

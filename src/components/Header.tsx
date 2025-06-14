@@ -18,7 +18,7 @@ export default function Header() {
   ]
 
   const whatsappNumber = "919414479697"
-  const whatsappMessage = "Hello! I'm interested in pipe fittings, C.P. fittings, tiles and sanitary products from New Modi Iron. Could you please help me?"
+  const whatsappMessage = "Hello! I&apos;m interested in pipe fittings, C.P. fittings, tiles and sanitary products from New Modi Iron. Could you please help me?"
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()

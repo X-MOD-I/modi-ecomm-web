@@ -12,7 +12,7 @@ export default function HomePage() {
   const whatsappNumber = "919414479697"
 
   const handleProductInquiry = (productName: string, price: string) => {
-    const message = `Hi! I'm interested in the ${productName} (${price}) from New Modi Iron. Could you please provide more details and a quote?`
+    const message = `Hi! I&apos;m interested in the ${productName} (${price}) from New Modi Iron. Could you please provide more details and a quote?`
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }

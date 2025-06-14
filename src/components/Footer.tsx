@@ -45,14 +45,14 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://www.threads.com/@tanozmodi?xmt=AQF0EgBnKzlZcdlgorOmVLpSdjEUNLNp6rO8wBrtqH-7IP4"
+                href="https://www.threads.com/@tanozmodi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="Threads"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                  <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.01v-.017C1.5 8.417 2.35 5.563 3.995 3.512 5.845 1.205 8.598.024 12.186 0h.014c2.984 0 5.682.817 7.819 2.368l-3.135 4.348c-1.285-.746-2.737-1.157-4.184-1.176-1.773.02-3.301.646-4.548 1.864-1.247 1.218-1.88 2.808-1.88 4.723v.017c0 1.915.633 3.505 1.88 4.723 1.247 1.218 2.775 1.844 4.548 1.864 1.447-.019 2.899-.43 4.184-1.176l3.135 4.348C17.868 23.183 15.17 24 12.186 24zM12.5 14.5c-1.378 0-2.5-1.122-2.5-2.5s1.122-2.5 2.5-2.5 2.5 1.122 2.5 2.5-1.122 2.5-2.5 2.5z"/>
                 </svg>
               </a>
             </div>

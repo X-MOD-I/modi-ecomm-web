@@ -141,11 +141,23 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6 text-blue-600 mr-3" />
                   <h3 className="text-xl font-semibold text-gray-900">Shop Address</h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-3">
+                <p className="text-gray-600 leading-relaxed mb-4">
                   17-18 Teh Bazaar<br />
                   Purani Dhan Mandi<br />
                   Sri Ganganagar, Rajasthan
                 </p>
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d432.21618078481976!2d73.87353495253355!3d29.929690236359985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3917b50eeff60a61%3A0x67e0552c266629c5!2sNew%20modi%20iron!5e0!3m2!1sen!2sau!4v1749917471145!5m2!1sen!2sau" 
+                    width="100%" 
+                    height="250" 
+                    style={{border: 0}} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-60 rounded-lg"
+                  ></iframe>
+                </div>
                 <a 
                   href="https://maps.app.goo.gl/8hAnvNqfsEtVH6YU9" 
                   target="_blank" 
@@ -153,7 +165,7 @@ export default function ContactPage() {
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
                 >
                   <MapPin className="w-4 h-4 mr-1" />
-                  View on Google Maps
+                  View Shop on Google Maps
                 </a>
               </div>
 
@@ -163,11 +175,32 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6 text-orange-600 mr-3" />
                   <h3 className="text-xl font-semibold text-gray-900">Godown Address</h3>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed mb-4">
                   26 Doctor Colony<br />
                   Lane next to Nexa Showroom<br />
                   Suratgarh Road, Sri Ganganagar, Rajasthan
                 </p>
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.8931037047687!2d73.8779043!3d29.8961806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3917b52d8555cf53%3A0x4a56751b501fc822!2s26-27%2C%20Doctor%20Colony%2C%20Ramdev%20Colony%2C%20Sri%20Ganganagar%2C%20Rajasthan%20335001%2C%20India!5e0!3m2!1sen!2sau!4v1749917833036!5m2!1sen!2sau" 
+                    width="100%" 
+                    height="250" 
+                    style={{border: 0}} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-60 rounded-lg"
+                  ></iframe>
+                </div>
+                <a 
+                  href="https://maps.app.goo.gl/8hAnvNqfsEtVH6YU9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium text-sm"
+                >
+                  <MapPin className="w-4 h-4 mr-1" />
+                  View Godown on Google Maps
+                </a>
               </div>
 
               {/* Team Contacts */}
@@ -261,45 +294,6 @@ export default function ContactPage() {
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">5000+</div>
               <div className="text-gray-600">Happy Customers</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Find Us</h2>
-            <p className="text-lg text-gray-600">Located in the heart of Sri Ganganagar, Rajasthan</p>
-          </div>
-          <div className="bg-white rounded-lg p-4 shadow-lg">
-            <div className="mb-4 text-center">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Our Location</h3>
-              <p className="text-gray-600">17-18 Teh Bazaar, Purani Dhan Mandi, Sri Ganganagar, Rajasthan</p>
-            </div>
-            <div className="rounded-lg overflow-hidden">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.8931045725258!2d73.875329375548!3d29.896180574998645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3917b52d8555cf53%3A0x4a56751b501fc822!2s26-27%2C%20Doctor%20Colony%2C%20Ramdev%20Colony%2C%20Sri%20Ganganagar%2C%20Rajasthan%20335001%2C%20India!5e0!3m2!1sen!2sau!4v1749916968986!5m2!1sen!2sau" 
-                width="100%" 
-                height="400" 
-                style={{border: 0}} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-96 rounded-lg"
-              ></iframe>
-            </div>
-            <div className="mt-4 text-center">
-              <a 
-                href="https://maps.app.goo.gl/8hAnvNqfsEtVH6YU9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
-              >
-                <MapPin className="w-5 h-5 mr-2" />
-                Open in Google Maps
-              </a>
             </div>
           </div>
         </div>

@@ -13,7 +13,6 @@ export default function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
-    { name: 'Collections', href: '/products' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -51,7 +50,7 @@ export default function Header() {
                 ✨ Quality Guaranteed Products
               </span>
               <span className="flex items-center">
-                🏆 Trusted Since Years
+                🏆 Trusted Since 1994
               </span>
             </div>
           </div>

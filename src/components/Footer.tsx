@@ -72,11 +72,7 @@ export default function Footer() {
                   Products
                 </Link>
               </li>
-              <li>
-                <Link href="/categories" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Categories
-                </Link>
-              </li>
+
               <li>
                 <Link href="/about" className="text-gray-300 hover:text-white transition-colors duration-200">
                   About Us
@@ -131,7 +127,7 @@ export default function Footer() {
               <div>
                 <h5 className="font-semibold mb-1">Shop Address</h5>
                 <p className="text-gray-300 text-sm">
-                  17-18 Tah Bazaar<br />
+                  17-18 Teh Bazaar<br />
                   Purani Dhan Mandi<br />
                   Sri Ganganagar, Rajasthan
                 </p>
@@ -144,7 +140,7 @@ export default function Footer() {
                 <h5 className="font-semibold mb-1">Godown Address</h5>
                 <p className="text-gray-300 text-sm">
                   26 Doctor Colony<br />
-                  Lane next to Naksa Showroom<br />
+                  Lane next to Nexa Showroom<br />
                   Suratgarh Road, Sri Ganganagar, Rajasthan
                 </p>
               </div>
@@ -155,7 +151,7 @@ export default function Footer() {
               <div>
                 <h5 className="font-semibold mb-1">Contact Us</h5>
                 <p className="text-gray-300 text-sm">
-                  <strong>Prof. Tanoj Modi (Proprietor)</strong><br />
+                  <strong>Tanoj Modi Ji (Proprietor)</strong><br />
                   📞 +91 94144-79697<br />
                   ✉️ tanozmodi@gmail.com<br />
                   <span className="text-xs">GSTIN: 08AOYPM2012C1Z2</span>

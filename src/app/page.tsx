@@ -238,7 +238,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">About Bath Gallery Store</h2>
               <p className="text-lg text-gray-600 mb-6">
-                With over 25 years of experience in the bathroom fittings industry, we've been helping homeowners
+                With over 30 years of experience in the bathroom fittings industry, we've been helping homeowners
                 and contractors create beautiful, functional bathrooms across India.
               </p>
               <p className="text-lg text-gray-600 mb-8">

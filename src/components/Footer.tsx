@@ -12,18 +12,18 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
               <div className="bg-primary-600 text-white p-2 rounded-lg mr-3">
-                <span className="text-xl font-bold">BG</span>
+                <span className="text-xl font-bold">NMI</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Bath Gallery Store</h3>
-                <p className="text-gray-400 text-sm">Premium Bath Fittings & Accessories</p>
+                <h3 className="text-xl font-bold">New Modi Iron</h3>
+                <p className="text-gray-400 text-sm">न्यू मोदी आयरन • Pipe Fittings, C.P. Fittings, Tiles & Sanitary Products</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Your trusted partner for premium bathroom solutions since 1995. We specialize in high-quality 
-              bath fittings, fixtures, and accessories that transform your bathroom into a luxurious space.
+              Your trusted partner for quality pipe fittings, C.P. fittings, tiles, and sanitary products.
+              Serving Sri Ganganagar and surrounding areas with premium products and excellent service.
             </p>
-            
+
             {/* Social Media */}
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -112,35 +112,59 @@ export default function Footer() {
             <div className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-primary-400 mt-1 flex-shrink-0" />
               <div>
-                <h5 className="font-semibold mb-1">Visit Our Showroom</h5>
+                <h5 className="font-semibold mb-1">Shop Address</h5>
                 <p className="text-gray-300 text-sm">
-                  123, MG Road<br />
-                  Commercial Complex<br />
-                  Mumbai, Maharashtra 400001
+                  17-18 Tah Bazaar<br />
+                  Purani Dhan Mandi<br />
+                  Sri Ganganagar, Rajasthan
                 </p>
               </div>
             </div>
-            
+
+            <div className="flex items-start space-x-3">
+              <MapPin className="w-5 h-5 text-primary-400 mt-1 flex-shrink-0" />
+              <div>
+                <h5 className="font-semibold mb-1">Godown Address</h5>
+                <p className="text-gray-300 text-sm">
+                  26 Doctor Colony<br />
+                  Lane next to Naksa Showroom<br />
+                  Suratgarh Road, Sri Ganganagar, Rajasthan
+                </p>
+              </div>
+            </div>
+
             <div className="flex items-start space-x-3">
               <Phone className="w-5 h-5 text-primary-400 mt-1 flex-shrink-0" />
               <div>
-                <h5 className="font-semibold mb-1">Call Us</h5>
+                <h5 className="font-semibold mb-1">Contact Us</h5>
                 <p className="text-gray-300 text-sm">
-                  Phone: +91 98765 43210<br />
-                  Landline: +91 22 2567 8901
+                  <strong>Prof. Tanoj Modi (Proprietor)</strong><br />
+                  📞 +91 94144-79697<br />
+                  ✉️ tanozmodi@gmail.com<br />
+                  <span className="text-xs">GSTIN: 08AOYPM2012C1Z2</span>
                 </p>
               </div>
             </div>
-            
-            <div className="flex items-start space-x-3">
-              <Clock className="w-5 h-5 text-primary-400 mt-1 flex-shrink-0" />
-              <div>
-                <h5 className="font-semibold mb-1">Store Hours</h5>
-                <p className="text-gray-300 text-sm">
-                  Mon-Sat: 10:00 AM - 8:00 PM<br />
-                  Sun: 11:00 AM - 7:00 PM<br />
-                  <span className="text-xs">Closed on public holidays</span>
-                </p>
+          </div>
+
+          {/* Team Contacts */}
+          <div className="mt-8 pt-6 border-t border-gray-700">
+            <h5 className="font-semibold mb-4 text-center">Our Team</h5>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="text-center">
+                <p className="font-medium text-white">Arjun Ji</p>
+                <p className="text-gray-400">Account Manager</p>
+                <p className="text-gray-300">📞 +91 93515-92575</p>
+              </div>
+              <div className="text-center">
+                <p className="font-medium text-white">Jagdeesh Ji</p>
+                <p className="text-gray-400">Godown Manager</p>
+                <p className="text-gray-300">📞 +91 97831-72074</p>
+              </div>
+              <div className="text-center">
+                <p className="font-medium text-white">Bhanwar Lal Ji</p>
+                <p className="text-gray-400">Marketing Manager</p>
+                <p className="text-gray-300">📞 +91 94611-83534</p>
               </div>
             </div>
           </div>
@@ -151,7 +175,7 @@ export default function Footer() {
           <div className="md:flex md:items-center md:justify-between">
             <div className="mb-4 md:mb-0">
               <h5 className="font-semibold mb-2">Stay Updated</h5>
-              <p className="text-gray-300 text-sm">Get the latest deals and new product announcements</p>
+              <p className="text-gray-300 text-sm">Get the latest deals and product updates</p>
             </div>
             <div className="flex max-w-md">
               <input
@@ -172,7 +196,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto section-padding">
           <div className="md:flex md:items-center md:justify-between">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Bath Gallery Store. All rights reserved.
+              © {currentYear} New Modi Iron. All rights reserved.
             </p>
             <div className="mt-2 md:mt-0 flex space-x-6">
               <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">

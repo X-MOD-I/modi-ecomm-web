@@ -18,8 +18,8 @@ export default function Header() {
     { name: 'Contact', href: '/contact' },
   ]
 
-  const whatsappNumber = "919876543210"
-  const whatsappMessage = "Hello! I'm interested in Ganga Bath Fittings. Could you please help me?"
+  const whatsappNumber = "919414479697"
+  const whatsappMessage = "Hello! I'm interested in pipe fittings, C.P. fittings, tiles and sanitary products. Could you please help me?"
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,22 +39,19 @@ export default function Header() {
             <div className="flex items-center space-x-8">
               <span className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                <span className="font-medium">+91 98765 43210</span>
+                <span className="font-medium">+91 94144-79697</span>
               </span>
               <span className="hidden md:flex items-center text-blue-100">
                 <Mail className="w-4 h-4 mr-2" />
-                bathgallery@example.com
+                tanozmodi@gmail.com
               </span>
             </div>
             <div className="hidden lg:flex items-center space-x-6 text-blue-100 text-xs">
               <span className="flex items-center">
-                🚚 Free Site Visit Above ₹15,000
+                ✨ Quality Guaranteed Products
               </span>
               <span className="flex items-center">
-                ✨ 5-15 Years Warranty
-              </span>
-              <span className="flex items-center">
-                🏆 Authorized Ganga Dealer
+                🏆 Trusted Since Years
               </span>
             </div>
           </div>
@@ -72,9 +69,9 @@ export default function Header() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
-                  Bath Gallery Store
+                  New Modi Iron
                 </h1>
-                <p className="text-sm text-gray-600 font-medium">Ganga Bath Fittings • Premium Quality</p>
+                <p className="text-sm text-gray-600 font-medium">न्यू मोदी आयरन • Pipe Fittings, C.P. Fittings, Tiles & Sanitary</p>
               </div>
             </Link>
           </div>
@@ -86,7 +83,7 @@ export default function Header() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search Ganga Bath Fittings products..."
+                placeholder="Search pipe fittings, tiles, sanitary products..."
                 className="w-full pl-12 pr-6 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-gray-50 focus:bg-white"
               />
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -127,7 +124,7 @@ export default function Header() {
               <MessageCircle className="w-5 h-5" />
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
-            
+
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -180,17 +177,17 @@ export default function Header() {
               >
                 Get Quote
               </Link>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919414479697"
                   className="flex items-center justify-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-lg font-medium transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call</span>
                 </a>
                 <a
-                  href="mailto:bathgallery@example.com"
+                  href="mailto:tanozmodi@gmail.com"
                   className="flex items-center justify-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-lg font-medium transition-colors"
                 >
                   <Mail className="w-4 h-4" />

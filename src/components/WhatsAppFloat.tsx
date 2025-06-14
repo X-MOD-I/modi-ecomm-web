@@ -3,8 +3,8 @@
 import { MessageCircle } from 'lucide-react'
 
 export default function WhatsAppFloat() {
-  const whatsappNumber = "919876543210"
-  const defaultMessage = "Hello! I'm interested in your bath fittings. Could you please help me?"
+  const whatsappNumber = "919414479697"
+  const defaultMessage = "Hello! I'm interested in your pipe fittings, C.P. fittings, tiles and sanitary products. Could you please help me?"
 
   const handleWhatsAppClick = () => {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`
@@ -20,7 +20,7 @@ export default function WhatsAppFloat() {
       >
         <MessageCircle className="w-6 h-6" />
       </button>
-      
+
       {/* Tooltip */}
       <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
         Chat with us on WhatsApp

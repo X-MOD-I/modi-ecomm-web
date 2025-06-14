@@ -25,9 +25,9 @@ export default function InquiryForm({ productName, productPrice }: InquiryFormPr
     setIsSubmitting(true)
 
     // Create email content
-    const emailSubject = `Bath Gallery Inquiry - ${formData.inquiryType === 'product' ? formData.product : 'General Inquiry'}`
+    const emailSubject = `New Modi Iron Inquiry - ${formData.inquiryType === 'product' ? formData.product : 'General Inquiry'}`
     const emailBody = `
-New Inquiry from Bath Gallery Website:
+New Inquiry from New Modi Iron Website:
 
 Name: ${formData.name}
 Email: ${formData.email}
@@ -39,12 +39,12 @@ Message:
 ${formData.message}
 
 ---
-Sent from Bath Gallery Website
+Sent from New Modi Iron Website (न्यू मोदी आयरन)
     `.trim()
 
     // For now, we'll use mailto (you can replace this with a proper backend later)
-    const mailtoLink = `mailto:bathgallery@example.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
-    
+    const mailtoLink = `mailto:tanozmodi@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+
     // Open email client
     window.location.href = mailtoLink
 
@@ -52,7 +52,7 @@ Sent from Bath Gallery Website
     setTimeout(() => {
       setIsSubmitting(false)
       setSubmitted(true)
-      
+
       // Reset form after 3 seconds
       setTimeout(() => {
         setSubmitted(false)
@@ -95,7 +95,7 @@ Sent from Bath Gallery Website
         <MessageSquare className="w-5 h-5 mr-2 text-primary-600" />
         Send us an Inquiry
       </h3>
-      
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid md:grid-cols-2 gap-4">
           <div>
@@ -113,7 +113,7 @@ Sent from Bath Gallery Website
               placeholder="Your full name"
             />
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               <Phone className="w-4 h-4 inline mr-1" />
@@ -214,9 +214,9 @@ Sent from Bath Gallery Website
           )}
         </button>
       </form>
-      
+
       <div className="mt-4 text-sm text-gray-600 text-center">
-        <p>Or call us directly at <a href="tel:+919876543210" className="text-primary-600 font-semibold">+91 98765 43210</a></p>
+        <p>Or call us directly at <a href="tel:+919414479697" className="text-primary-600 font-semibold">+91 94144-79697</a></p>
       </div>
     </div>
   )

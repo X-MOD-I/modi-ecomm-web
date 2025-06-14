@@ -49,11 +49,28 @@ export const productCategories: ProductCategory[] = [
 import { csvImportedProducts as gangaProducts } from './ganga-products'
 import { csvImportedProducts as toraProducts } from './tora-products'
 
-// All your real product data from CSV files
-export const allProducts: Product[] = [
-    ...gangaProducts,
-    ...toraProducts
-]
+// Filter function to remove dummy/placeholder products
+const filterRealProducts = (products: Product[]): Product[] => {
+    return products.filter(product => {
+        // Remove products with generic placeholder descriptions
+        const hasGenericDescription = product.description.includes('Premium quality') && 
+                                    product.description.includes('superior durability and modern design') &&
+                                    product.description.includes('Perfect for contemporary bathrooms')
+        
+        // Remove products with random placeholder images
+        const hasRandomImage = product.images.some(image => 
+            image.includes('picsum.photos') || 
+            image.includes('random=')
+        )
+        
+        // Keep only products that don't have generic descriptions or random images
+        return !hasGenericDescription && !hasRandomImage
+    })
+}
+
+// All your real product data from CSV files (filtered to remove dummy products)
+const rawProducts = [...gangaProducts, ...toraProducts]
+export const allProducts: Product[] = filterRealProducts(rawProducts)
 
 // Featured products for homepage (limited for performance)
 export const featuredProducts: Product[] = allProducts.slice(0, 50)

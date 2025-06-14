@@ -30,10 +30,10 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 w-full">
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-2.5">
-        <div className="w-full max-w-none px-4 lg:px-8">
+      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-2.5 w-full">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-8">
               <span className="flex items-center">
@@ -58,7 +58,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="w-full max-w-none px-4 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -67,10 +67,10 @@ export default function Header() {
                 <ShoppingBag className="w-7 h-7" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
                   New Modi Iron
                 </h1>
-                <p className="text-sm text-gray-600 font-medium">न्यू मोदी आयरन • Pipe Fittings, C.P. Fittings, Tiles & Sanitary</p>
+                <p className="text-xs sm:text-sm text-gray-600 font-medium">न्यू मोदी आयरन • Pipe Fittings, C.P. Fittings, Tiles & Sanitary</p>
               </div>
             </Link>
           </div>
@@ -118,7 +118,7 @@ export default function Header() {
               href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-lg transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
+              className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 sm:px-6 py-2.5 rounded-lg transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
             >
               <MessageCircle className="w-5 h-5" />
               <span className="hidden sm:inline">WhatsApp</span>
@@ -143,6 +143,7 @@ export default function Header() {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search products..."
               className="w-full pl-12 pr-6 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-gray-50 focus:bg-white"
+              style={{ fontSize: '16px' }}
             />
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           </form>
@@ -151,7 +152,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg w-full">
           <div className="px-4 py-6">
             {/* Mobile Navigation Links */}
             <nav className="space-y-2 mb-6">

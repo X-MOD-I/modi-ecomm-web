@@ -90,16 +90,16 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-xl font-semibold mb-4 flex items-center">
+    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+      <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center">
         <MessageSquare className="w-5 h-5 mr-2 text-primary-600" />
         Send us an Inquiry
       </h3>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid md:grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               <User className="w-4 h-4 inline mr-1" />
               Full Name *
             </label>
@@ -109,13 +109,14 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base"
+              style={{ fontSize: '16px' }}
               placeholder="Your full name"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               <Phone className="w-4 h-4 inline mr-1" />
               Phone Number *
             </label>
@@ -125,14 +126,15 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base"
+              style={{ fontSize: '16px' }}
               placeholder="+91 98765 43210"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             <Mail className="w-4 h-4 inline mr-1" />
             Email Address *
           </label>
@@ -142,20 +144,22 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base"
+            style={{ fontSize: '16px' }}
             placeholder="your.email@example.com"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             Inquiry Type
           </label>
           <select
             name="inquiryType"
             value={formData.inquiryType}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base"
+            style={{ fontSize: '16px' }}
           >
             <option value="general">General Inquiry</option>
             <option value="product">Product Quote</option>
@@ -167,7 +171,7 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
 
         {productName && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Product of Interest
             </label>
             <input
@@ -175,14 +179,15 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
               name="product"
               value={formData.product}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base"
+              style={{ fontSize: '16px' }}
               placeholder="Product name"
             />
           </div>
         )}
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             Message *
           </label>
           <textarea
@@ -191,7 +196,8 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
             onChange={handleChange}
             required
             rows={4}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none text-base"
+            style={{ fontSize: '16px' }}
             placeholder="Please describe your requirements, preferred timeline, budget range, etc."
           />
         </div>
@@ -199,16 +205,17 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full btn-primary flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg text-base font-semibold transition-colors duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
+          style={{ minHeight: '48px' }}
         >
           {isSubmitting ? (
             <>
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
               Submitting...
             </>
           ) : (
             <>
-              <Send className="w-4 h-4 mr-2" />
+              <Send className="w-5 h-5 mr-2" />
               Send Inquiry
             </>
           )}
@@ -216,7 +223,7 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
       </form>
 
       <div className="mt-4 text-sm text-gray-600 text-center">
-        <p>Or call us directly at <a href="tel:+919414479697" className="text-primary-600 font-semibold">+91 94144-79697</a></p>
+        <p>Or call us directly at <a href="tel:+919414479697" className="text-primary-600 font-semibold hover:underline">+91 94144-79697</a></p>
       </div>
     </div>
   )

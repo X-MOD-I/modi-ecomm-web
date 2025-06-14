@@ -6,9 +6,10 @@ import WhatsAppFloat from '@/components/WhatsAppFloat'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Bath Gallery Store - Premium Bath Fittings & Accessories',
-  description: 'Discover premium bath fittings, accessories, and fixtures at Bath Gallery Store. Quality products for your bathroom renovation needs.',
-  keywords: ['bath fittings', 'bathroom accessories', 'bathroom fixtures', 'bath gallery'],
+  title: 'New Modi Iron - Premium Pipe Fittings, C.P. Fittings, Tiles & Sanitary Products',
+  description: 'Quality pipe fittings, C.P. fittings, tiles and sanitary products in Sri Ganganagar. Authorized dealer of Ganga Bath Fittings and TORA Showers with 30+ years experience.',
+  keywords: ['pipe fittings', 'cp fittings', 'bathroom fittings', 'tiles', 'sanitary products', 'sri ganganagar', 'new modi iron'],
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
 }
 
 export default function RootLayout({
@@ -18,8 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      </head>
       <body className={inter.className}>
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 w-full overflow-x-hidden">
           {children}
           <WhatsAppFloat />
         </div>

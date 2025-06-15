@@ -6,7 +6,7 @@ import { MessageCircle, Star, Truck, Shield, Phone, Mail, MapPin } from 'lucide-
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InquiryForm from '@/components/InquiryForm'
-import { featuredProducts } from '@/data/products'
+import { allProducts } from '@/data/products'
 
 export default function HomePage() {
   const whatsappNumber = "919414479697"
@@ -16,6 +16,44 @@ export default function HomePage() {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
+
+  // Get 8 products with variety from different categories
+  const getVariedProducts = () => {
+    // Get unique subcategories
+    const categories = Array.from(new Set(
+      allProducts
+        .map(p => p.subcategory)
+        .filter(Boolean)
+    ))
+
+    const selectedProducts = []
+    
+    // Try to get one product from each category
+    for (const category of categories) {
+      if (selectedProducts.length >= 8) break
+      
+      const categoryProducts = allProducts.filter(p => p.subcategory === category)
+      if (categoryProducts.length > 0) {
+        // Get the first product from this category (you could randomize this)
+        selectedProducts.push(categoryProducts[0])
+      }
+    }
+    
+    // If we still need more products, fill with remaining products
+    if (selectedProducts.length < 8) {
+      const usedIds = new Set(selectedProducts.map(p => p.id))
+      const remainingProducts = allProducts.filter(p => !usedIds.has(p.id))
+      
+      for (const product of remainingProducts) {
+        if (selectedProducts.length >= 8) break
+        selectedProducts.push(product)
+      }
+    }
+    
+    return selectedProducts.slice(0, 8)
+  }
+
+  const featuredProducts = getVariedProducts()
 
   return (
     <div className="min-h-screen w-full">
@@ -108,11 +146,11 @@ export default function HomePage() {
         <div className="w-full mobile-px">
           <div className="text-center mobile-mb">
             <h2 className="section-title">Ganga Bath Fittings Collection</h2>
-            <p className="section-subtitle mobile-px sm:px-0">Premium quality bath fittings with 5-15 years warranty. Discover our exclusive range of 40+ collections.</p>
+            <p className="section-subtitle mobile-px sm:px-0">Premium quality bath fittings with 5-15 years warranty. Discover our diverse range across all categories.</p>
           </div>
 
           <div className="product-grid-mobile">
-            {featuredProducts.slice(0, 6).map((product) => (
+            {featuredProducts.map((product) => (
               <div key={product.id} className="card hover:shadow-xl transition-all duration-300 relative flex flex-col h-full group">
                 <div className="relative overflow-hidden rounded-t-xl">
                   <Image

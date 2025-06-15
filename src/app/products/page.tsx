@@ -8,7 +8,7 @@ import { allProducts } from '@/data/products'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const PRODUCTS_PER_PAGE = 20
+const PRODUCTS_PER_PAGE = 8
 
 function ProductsContent() {
   const searchParams = useSearchParams()

@@ -158,14 +158,41 @@ export default function Header() {
               <span className="sm:hidden">Chat</span>
             </a>
 
-            {/* Mobile menu button */}
+            {/* Animated Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-3 text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="lg:hidden p-3 text-gray-700 hover:text-primary-600 hover:bg-gray-100 rounded-lg transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center group"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <div className="relative w-6 h-6 flex flex-col justify-center">
+                {/* Top Line */}
+                <span 
+                  className={`block absolute h-0.5 w-6 bg-current transform transition-all duration-300 ease-in-out ${
+                    isMenuOpen 
+                      ? 'rotate-45 translate-y-0' 
+                      : '-translate-y-2'
+                  }`}
+                />
+                
+                {/* Middle Line */}
+                <span 
+                  className={`block absolute h-0.5 w-6 bg-current transform transition-all duration-300 ease-in-out ${
+                    isMenuOpen 
+                      ? 'opacity-0 scale-0' 
+                      : 'opacity-100 scale-100'
+                  }`}
+                />
+                
+                {/* Bottom Line */}
+                <span 
+                  className={`block absolute h-0.5 w-6 bg-current transform transition-all duration-300 ease-in-out ${
+                    isMenuOpen 
+                      ? '-rotate-45 translate-y-0' 
+                      : 'translate-y-2'
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
@@ -187,29 +214,38 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Backdrop */}
-      {isMenuOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsMenuOpen(false)}
-          aria-hidden="true"
-        />
-      )}
+      <div 
+        className={`lg:hidden fixed inset-0 bg-black transition-opacity duration-300 ease-in-out z-40 ${
+          isMenuOpen 
+            ? 'opacity-50 visible' 
+            : 'opacity-0 invisible'
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+        aria-hidden="true"
+      />
 
-      {/* Mobile Navigation Menu */}
-      <div className={`lg:hidden mobile-menu-container relative z-50 transition-all duration-300 ease-in-out ${
+      {/* Enhanced Mobile Navigation Menu */}
+      <div className={`lg:hidden mobile-menu-container relative z-50 transition-all duration-300 ease-in-out transform ${
         isMenuOpen 
-          ? 'max-h-screen opacity-100 visible' 
-          : 'max-h-0 opacity-0 invisible overflow-hidden'
+          ? 'max-h-screen opacity-100 visible translate-y-0' 
+          : 'max-h-0 opacity-0 invisible -translate-y-4 overflow-hidden'
       }`}>
         <div className="bg-white border-t border-gray-200 shadow-xl">
           <div className="px-4 py-6 space-y-1">
-            {/* Mobile Navigation Links */}
+            {/* Mobile Navigation Links with Stagger Animation */}
             <nav className="space-y-1 mb-6">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-semibold transition-all duration-200 rounded-xl text-lg min-h-[52px] flex items-center relative z-10"
+                  className={`block py-4 px-4 text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-semibold transition-all duration-200 rounded-xl text-lg min-h-[52px] flex items-center relative z-10 transform ${
+                    isMenuOpen 
+                      ? 'translate-x-0 opacity-100' 
+                      : '-translate-x-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms'
+                  }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -217,11 +253,19 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Mobile Action Buttons */}
-            <div className="space-y-3">
+            {/* Mobile Action Buttons with Animation */}
+            <div className={`space-y-3 transform transition-all duration-300 ${
+              isMenuOpen 
+                ? 'translate-y-0 opacity-100' 
+                : 'translate-y-4 opacity-0'
+            }`}
+            style={{
+              transitionDelay: isMenuOpen ? '200ms' : '0ms'
+            }}
+            >
               <Link
                 href="/contact"
-                className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold transition-colors shadow-md text-lg min-h-[52px] flex items-center justify-center relative z-10"
+                className="block w-full text-center bg-primary-600 hover:bg-primary-700 text-white py-4 rounded-xl font-semibold transition-colors shadow-md text-lg min-h-[52px] flex items-center justify-center relative z-10"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get Quote

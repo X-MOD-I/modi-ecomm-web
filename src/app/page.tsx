@@ -22,7 +22,7 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white w-full overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary-900 to-primary-700 text-white w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://gangabathfittings.com/wp-content/uploads/2023/06/101-450x450.jpg"
@@ -44,10 +44,10 @@ export default function HomePage() {
                 Premium quality products with 5-15 years warranty. Your trusted partner for pipe fittings, C.P. fittings, tiles, and sanitary products.
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm mb-6 lg:mb-8">
-                <span className="bg-blue-800 px-3 py-2 rounded-full whitespace-nowrap">40+ Premium Collections</span>
-                <span className="bg-blue-800 px-3 py-2 rounded-full whitespace-nowrap">5-15 Years Warranty</span>
-                <span className="bg-blue-800 px-3 py-2 rounded-full whitespace-nowrap">Expert Installation</span>
-                <span className="bg-blue-800 px-3 py-2 rounded-full whitespace-nowrap">Quality Guaranteed</span>
+                <span className="bg-primary-800 px-3 py-2 rounded-full whitespace-nowrap">40+ Premium Collections</span>
+                <span className="bg-primary-800 px-3 py-2 rounded-full whitespace-nowrap">5-15 Years Warranty</span>
+                <span className="bg-primary-800 px-3 py-2 rounded-full whitespace-nowrap">Expert Installation</span>
+                <span className="bg-primary-800 px-3 py-2 rounded-full whitespace-nowrap">Quality Guaranteed</span>
               </div>
               <div className="mobile-flex-row">
                 <Link href="/products" className="btn-primary text-center min-h-[52px] flex items-center justify-center text-base sm:text-lg font-semibold flex-1 sm:flex-none sm:px-8">

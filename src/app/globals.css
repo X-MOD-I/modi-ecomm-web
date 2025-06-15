@@ -44,7 +44,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
     /* Better touch targets for mobile */
     min-height: 44px;
     min-width: 44px;
@@ -138,14 +138,14 @@
 
   /* Professional form styling with better mobile UX */
   .form-input {
-    @apply w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-gray-50 focus:bg-white;
+    @apply w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all bg-gray-50 focus:bg-white;
     min-height: 48px; /* Better touch targets */
     font-size: 16px; /* Prevent zoom on iOS */
     width: 100%;
   }
 
   .form-button {
-    @apply w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg;
     min-height: 52px; /* Better touch targets for important buttons */
     width: 100%;
   }

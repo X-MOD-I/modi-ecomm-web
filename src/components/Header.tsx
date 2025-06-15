@@ -63,7 +63,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 w-full">
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-2.5 w-full">
+      <div className="bg-gradient-to-r from-primary-800 to-primary-700 text-white py-2.5 w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4 sm:space-x-8">
@@ -94,7 +94,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 sm:p-3 rounded-xl mr-2 sm:mr-4 group-hover:from-blue-700 group-hover:to-blue-800 transition-all duration-200 shadow-md">
+              <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-2 sm:p-3 rounded-xl mr-2 sm:mr-4 group-hover:from-primary-700 group-hover:to-primary-800 transition-all duration-200 shadow-md">
                 <ShoppingBag className="w-5 h-5 sm:w-7 sm:h-7" />
               </div>
               <div className="min-w-0">
@@ -128,10 +128,10 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 font-semibold transition-colors duration-200 relative group py-2 px-1"
+                className="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200 relative group py-2 px-1"
               >
                 {item.name}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-primary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
               </Link>
             ))}
           </nav>

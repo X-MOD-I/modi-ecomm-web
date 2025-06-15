@@ -20,7 +20,7 @@ export default function ContactPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
+      <section className="bg-gradient-to-r from-primary-900 to-primary-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
@@ -39,13 +39,13 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {/* Phone */}
-            <div className="bg-blue-50 rounded-lg p-6 text-center">
-              <div className="bg-blue-600 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <div className="bg-primary-50 rounded-lg p-6 text-center">
+              <div className="bg-primary-600 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2 text-gray-900">Phone</h3>
               <p className="text-gray-600 mb-2">Call us directly</p>
-              <a href="tel:+919414479697" className="text-blue-600 hover:text-blue-800 font-medium">
+              <a href="tel:+919414479697" className="text-primary-600 hover:text-primary-800 font-medium">
                 +91 94144-79697
               </a>
             </div>
@@ -66,32 +66,28 @@ export default function ContactPage() {
             </div>
 
             {/* Email */}
-            <div className="bg-purple-50 rounded-lg p-6 text-center">
-              <div className="bg-purple-600 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <div className="bg-accent-50 rounded-lg p-6 text-center">
+              <div className="bg-accent-600 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Mail className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold mb-2 text-gray-900">Email</h3>
-              <p className="text-gray-600 mb-2">Send us details</p>
-              <a href="mailto:tanozmodi@gmail.com" className="text-purple-600 hover:text-purple-800 font-medium">
+              <p className="text-gray-600 mb-2">Send us a message</p>
+              <a href="mailto:tanozmodi@gmail.com" className="text-accent-600 hover:text-accent-800 font-medium">
                 tanozmodi@gmail.com
               </a>
             </div>
 
             {/* Location */}
-            <div className="bg-orange-50 rounded-lg p-6 text-center">
-              <div className="bg-orange-600 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <div className="bg-primary-50 rounded-lg p-6 text-center">
+              <div className="bg-primary-600 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-gray-900">Location</h3>
-              <p className="text-gray-600 mb-2">Visit our shop</p>
-              <a 
-                href="https://maps.app.goo.gl/8hAnvNqfsEtVH6YU9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-orange-600 hover:text-orange-800 font-medium text-sm underline"
-              >
-                Sri Ganganagar, Rajasthan
-              </a>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">Visit Us</h3>
+              <p className="text-gray-600 mb-2">Come to our store</p>
+              <p className="text-primary-600 font-medium text-sm">
+                17-18 Teh Bazaar<br />
+                Sri Ganganagar
+              </p>
             </div>
           </div>
         </div>
@@ -249,31 +245,34 @@ export default function ContactPage() {
             <p className="text-lg text-gray-600">Follow us on social media for updates and latest products</p>
           </div>
           
-          <div className="flex justify-center space-x-8 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 mb-12">
             <a 
               href="https://instagram.com/tanozmodi" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-200"
+              className="flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 sm:px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-200 text-sm sm:text-base"
             >
               <Instagram className="w-5 h-5" />
-              <span>Follow on Instagram</span>
+              <span className="hidden sm:inline">Follow on Instagram</span>
+              <span className="sm:hidden">Instagram</span>
             </a>
             <a 
               href="https://facebook.com/tanozmodi" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-200"
+              className="flex items-center space-x-2 bg-blue-600 text-white px-4 sm:px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-200 text-sm sm:text-base"
             >
               <Facebook className="w-5 h-5" />
-              <span>Like on Facebook</span>
+              <span className="hidden sm:inline">Like on Facebook</span>
+              <span className="sm:hidden">Facebook</span>
             </a>
             <button 
               onClick={handleWhatsAppContact}
-              className="flex items-center space-x-2 bg-green-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-200"
+              className="flex items-center space-x-2 bg-green-500 text-white px-4 sm:px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-200 text-sm sm:text-base"
             >
               <MessageCircle className="w-5 h-5" />
-              <span>WhatsApp Us</span>
+              <span className="hidden sm:inline">WhatsApp Us</span>
+              <span className="sm:hidden">WhatsApp</span>
             </button>
           </div>
 

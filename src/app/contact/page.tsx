@@ -105,7 +105,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6 text-gray-900">Send Us a Message</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Fill out the form below and we&apos;ll get back to you within 24 hours with a detailed quote and consultation.
+                Fill out the form below and we'll get back to you within 24 hours with a detailed quote and consultation.
               </p>
               <InquiryForm />
             </div>

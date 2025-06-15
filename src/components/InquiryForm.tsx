@@ -83,7 +83,7 @@ Sent from New Modi Iron Website (न्यू मोदी आयरन)
         </div>
         <h3 className="text-lg font-semibold text-green-800 mb-2">Thank You!</h3>
         <p className="text-green-700">
-          Your inquiry has been submitted. We&apos;ll get back to you within 24 hours.
+          Your inquiry has been submitted. We'll get back to you within 24 hours.
         </p>
       </div>
     )

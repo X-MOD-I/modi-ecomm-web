@@ -66,7 +66,7 @@ function ProductsContent() {
 
   // WhatsApp message generator
   const generateWhatsAppMessage = (product: any) => {
-    const message = `Hi! I&apos;m interested in ${product.name} (₹${product.price.toLocaleString()}). Can you provide more details and availability?`
+    const message = `Hi! I'm interested in ${product.name} (₹${product.price.toLocaleString()}). Can you provide more details and availability?`
     return `https://wa.me/919414479697?text=${encodeURIComponent(message)}`
   }
 

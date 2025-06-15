@@ -61,7 +61,7 @@ export default function Header() {
   }, [isMenuOpen])
 
   return (
-    <header className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50 w-full">
+    <header className="bg-gradient-to-r from-primary-50 to-accent-50 shadow-md border-b border-primary-200 sticky top-0 z-50 w-full">
       {/* Top Bar */}
       <div className="bg-gradient-to-r from-primary-800 to-primary-700 text-white py-2.5 w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -91,19 +91,30 @@ export default function Header() {
       {/* Main Header */}
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
+          {/* Brand Name */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center group">
-              <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-2 sm:p-3 rounded-xl mr-2 sm:mr-4 group-hover:from-primary-700 group-hover:to-primary-800 transition-all duration-200 shadow-md">
-                <ShoppingBag className="w-5 h-5 sm:w-7 sm:h-7" />
-              </div>
-              <div className="min-w-0">
-                <h1 className="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors truncate">
-                  New Modi Iron
-                </h1>
-                <p className="text-xs sm:text-sm text-gray-600 font-medium hidden sm:block line-clamp-1">
-                  न्यू मोदी आयरन • Pipe Fittings, C.P. Fittings, Tiles & Sanitary
-                </p>
+            <Link href="/" className="group">
+              <div className="relative">
+                {/* Background accent */}
+                <div className="absolute inset-0 bg-primary-100 rounded-lg transform -skew-x-6 group-hover:bg-primary-200 transition-colors duration-200"></div>
+                
+                <div className="relative px-4 py-2">
+                  <h1 className="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight">
+                    <span className="text-gray-700">NEW</span>
+                    <span className="text-accent-600 ml-1">MODI</span>
+                    <span className="text-gray-900 ml-1">IRON</span>
+                  </h1>
+                  <div className="flex items-center mt-1">
+                    <div className="w-6 h-0.5 bg-primary-500 mr-2"></div>
+                    <p className="text-xs sm:text-sm text-primary-600 font-semibold tracking-wide">
+                      PLUMBING SOLUTIONS
+                    </p>
+                    <div className="w-6 h-0.5 bg-primary-500 ml-2"></div>
+                  </div>
+                  <p className="text-xs text-gray-500 font-medium mt-1 hidden sm:block">
+                    न्यू मोदी आयरन • Since 1994
+                  </p>
+                </div>
               </div>
             </Link>
           </div>

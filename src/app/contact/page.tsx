@@ -20,16 +20,57 @@ export default function ContactPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-900 to-primary-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto">
+      <section className="relative bg-white py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent-500/10 to-primary-500/10"></div>
+        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-accent-500 via-primary-500 to-accent-500"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="flex justify-center space-x-4 mb-8">
+              <div className="bg-primary-500 p-3 rounded-full shadow-lg">
+                <Phone className="w-6 h-6 text-white" />
+              </div>
+              <div className="bg-green-500 p-3 rounded-full shadow-lg">
+                <MessageCircle className="w-6 h-6 text-white" />
+              </div>
+              <div className="bg-accent-500 p-3 rounded-full shadow-lg">
+                <Mail className="w-6 h-6 text-white" />
+              </div>
+              <div className="bg-primary-600 p-3 rounded-full shadow-lg">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-gray-900">
+              Contact <span className="text-primary-600">Us</span>
+            </h1>
+            <p className="text-xl lg:text-2xl mb-6 max-w-4xl mx-auto text-gray-600 leading-relaxed">
               Get in touch with our team for expert consultation and competitive quotes
             </p>
-            <p className="text-lg opacity-90">
+            <div className="text-lg text-accent-600 mb-8 font-medium">
               हमसे संपर्क करें - आपकी सुविधा के लिए
-            </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href="tel:+919414479697"
+                className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full font-medium transition-colors duration-200 flex items-center gap-2 shadow-lg"
+              >
+                <Phone className="w-4 h-4" />
+                Call Now
+              </a>
+              <button 
+                onClick={handleWhatsAppContact}
+                className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-medium transition-colors duration-200 flex items-center gap-2 shadow-lg"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </button>
+              <a 
+                href="mailto:tanozmodi@gmail.com"
+                className="bg-accent-500 hover:bg-accent-600 text-white px-6 py-3 rounded-full font-medium transition-colors duration-200 flex items-center gap-2 shadow-lg"
+              >
+                <Mail className="w-4 h-4" />
+                Email Us
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -104,7 +104,7 @@ function ProductsContent() {
             key={page}
             onClick={() => setCurrentPage(page)}
             className={`px-3 py-1 rounded ${currentPage === page
-                ? 'bg-blue-500 text-white'
+                ? 'bg-primary-500 text-white'
                 : 'border hover:bg-gray-50'
               }`}
           >
@@ -129,13 +129,27 @@ function ProductsContent() {
 
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
-            Our Product Catalog
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Browse our extensive collection of {allProducts.length} premium bathroom fittings.
-          </p>
+        <div className="relative bg-gradient-to-r from-primary-600 to-accent-500 text-white rounded-2xl p-8 mb-8 overflow-hidden">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative text-center">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Product Catalog
+            </h1>
+            <p className="text-primary-100 max-w-2xl mx-auto text-lg">
+              Browse our extensive collection of {allProducts.length} premium bathroom fittings.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                8 Categories
+              </span>
+              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                5-15 Years Warranty
+              </span>
+              <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
+                Premium Quality
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Search, Category Filter, and Price Filter */}
@@ -149,7 +163,7 @@ function ProductsContent() {
                 placeholder="Search products by name, description, or features..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
             </div>
 
@@ -157,7 +171,7 @@ function ProductsContent() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               <option value="all">All Categories</option>
               {availableCategories.map((category) => (
@@ -174,14 +188,14 @@ function ProductsContent() {
                 placeholder="Min ₹"
                 value={priceRange.min || ''}
                 onChange={(e) => setPriceRange(prev => ({ ...prev, min: parseInt(e.target.value) || 0 }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
               <input
                 type="number"
                 placeholder="Max ₹"
                 value={priceRange.max || ''}
                 onChange={(e) => setPriceRange(prev => ({ ...prev, max: parseInt(e.target.value) || 10000 }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
             </div>
           </div>
@@ -221,7 +235,7 @@ function ProductsContent() {
                   </div>
                 )}
                 {product.collection && (
-                  <div className="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded text-xs">
+                  <div className="absolute top-2 left-2 bg-primary-500 text-white px-2 py-1 rounded text-xs">
                     {product.collection}
                   </div>
                 )}
@@ -272,7 +286,7 @@ function ProductsContent() {
                     <MessageCircle className="w-4 h-4" />
                     Get Quote
                   </a>
-                  <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2">
+                  <button className="flex-1 bg-primary-500 hover:bg-primary-600 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2">
                     <Phone className="w-4 h-4" />
                     Call
                   </button>
@@ -311,7 +325,7 @@ export default function ProductsPage() {
     <Suspense fallback={
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500 mx-auto"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading products...</p>
         </div>
       </div>

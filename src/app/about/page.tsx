@@ -11,15 +11,40 @@ export default function AboutPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-primary-600 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full -translate-y-32 translate-x-32"></div>
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary-400/30 rounded-full translate-y-32 -translate-x-32"></div>
+          <div className="absolute inset-0 bg-primary-700/50"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">About New Modi Iron</h1>
-            <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto">
-              Your trusted partner for quality pipe fittings, C.P. fittings, tiles, and sanitary products since 1994
+            <div className="inline-flex items-center bg-accent-500 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-lg">
+              <Calendar className="w-4 h-4 mr-2" />
+              Established 1994
+            </div>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
+              About New Modi Iron
+            </h1>
+            <p className="text-xl lg:text-2xl mb-6 max-w-4xl mx-auto text-primary-100 leading-relaxed">
+              Your trusted partner for quality pipe fittings, C.P. fittings, tiles, and sanitary products
             </p>
-            <div className="text-lg opacity-90">
+            <div className="text-lg text-accent-300 mb-8 font-medium">
               न्यू मोदी आयरन - गुणवत्ता और विश्वसनीयता का प्रतीक
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="bg-white rounded-xl p-6 shadow-xl">
+                <div className="text-3xl font-bold text-primary-600 mb-2">30+</div>
+                <div className="text-gray-600 font-medium">Years Experience</div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-xl">
+                <div className="text-3xl font-bold text-accent-600 mb-2">5000+</div>
+                <div className="text-gray-600 font-medium">Happy Customers</div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-xl">
+                <div className="text-3xl font-bold text-primary-600 mb-2">25+</div>
+                <div className="text-gray-600 font-medium">Premium Brands</div>
+              </div>
             </div>
           </div>
         </div>

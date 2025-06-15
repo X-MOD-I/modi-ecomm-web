@@ -85,32 +85,32 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Customer Service */}
-          <div>
-            <h4 className="text-base lg:text-lg font-semibold mb-3 lg:mb-4">Customer Service</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/shipping" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
-                  Shipping Info
-                </Link>
-              </li>
-              <li>
-                <Link href="/returns" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
-                  Returns & Exchanges
-                </Link>
-              </li>
-              <li>
-                <Link href="/warranty" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
-                  Warranty
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
+                     {/* Customer Service */}
+           <div>
+             <h4 className="text-base lg:text-lg font-semibold mb-3 lg:mb-4">Customer Service</h4>
+             <ul className="space-y-2">
+               <li>
+                 <Link href="/coming-soon?page=shipping" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
+                   Shipping Info
+                 </Link>
+               </li>
+               <li>
+                 <Link href="/coming-soon?page=returns" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
+                   Returns & Exchanges
+                 </Link>
+               </li>
+               <li>
+                 <Link href="/coming-soon?page=warranty" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
+                   Warranty
+                 </Link>
+               </li>
+               <li>
+                 <Link href="/coming-soon?page=faq" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm lg:text-base">
+                   FAQ
+                 </Link>
+               </li>
+             </ul>
+           </div>
         </div>
 
         {/* Contact Information */}
@@ -217,13 +217,13 @@ export default function Footer() {
               © {currentYear} New Modi Iron. All rights reserved.
             </p>
             <div className="mt-2 md:mt-0 flex justify-center md:justify-end space-x-4 lg:space-x-6">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-xs lg:text-sm transition-colors duration-200">
+              <Link href="/coming-soon?page=privacy" className="text-gray-400 hover:text-white text-xs lg:text-sm transition-colors duration-200">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-xs lg:text-sm transition-colors duration-200">
+              <Link href="/coming-soon?page=terms" className="text-gray-400 hover:text-white text-xs lg:text-sm transition-colors duration-200">
                 Terms of Service
               </Link>
-              <Link href="/sitemap" className="text-gray-400 hover:text-white text-xs lg:text-sm transition-colors duration-200">
+              <Link href="/coming-soon?page=sitemap" className="text-gray-400 hover:text-white text-xs lg:text-sm transition-colors duration-200">
                 Sitemap
               </Link>
             </div>

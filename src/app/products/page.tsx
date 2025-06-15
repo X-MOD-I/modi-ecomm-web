@@ -3,8 +3,8 @@
 import React, { useState, useMemo, useEffect, Suspense } from 'react'
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
-import { Search, Filter, Phone, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react'
-import { allProducts, productCategories } from '@/data/products'
+import { Search, Phone, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react'
+import { allProducts } from '@/data/products'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -14,7 +14,6 @@ function ProductsContent() {
   const searchParams = useSearchParams()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [selectedSubcategory, setSelectedSubcategory] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
   const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 })
 
@@ -26,20 +25,43 @@ function ProductsContent() {
     }
   }, [searchParams])
 
-  // Filter products based on search and filters
+  // Get unique subcategories from products (these will be our main categories)
+  const availableCategories = useMemo(() => {
+    const subcategories = Array.from(new Set(
+      allProducts
+        .map(p => p.subcategory)
+        .filter(Boolean)
+    ))
+    
+    // Sort alphabetically but put "Other" at the end as "Others"
+    const sortedCategories = subcategories
+      .filter(sub => sub !== 'Other')
+      .sort()
+    
+    // Add "Others" at the end if "Other" exists in the data
+    if (subcategories.includes('Other')) {
+      sortedCategories.push('Others')
+    }
+    
+    return sortedCategories
+  }, [])
+
+  // Filter products based on search, category (subcategory), and price
   const filteredProducts = useMemo(() => {
     return allProducts.filter((product) => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
 
-      const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory
-      const matchesSubcategory = selectedSubcategory === 'all' || product.subcategory === selectedSubcategory
+      const matchesCategory = selectedCategory === 'all' || 
+        product.subcategory === selectedCategory ||
+        (selectedCategory === 'Others' && product.subcategory === 'Other')
+
       const matchesPrice = product.price >= priceRange.min && product.price <= priceRange.max
 
-      return matchesSearch && matchesCategory && matchesSubcategory && matchesPrice
+      return matchesSearch && matchesCategory && matchesPrice
     })
-  }, [searchTerm, selectedCategory, selectedSubcategory, priceRange])
+  }, [searchTerm, selectedCategory, priceRange])
 
   // Paginate filtered products
   const paginatedProducts = useMemo(() => {
@@ -50,19 +72,10 @@ function ProductsContent() {
 
   const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE)
 
-  // Get unique subcategories for current category
-  const subcategories = useMemo(() => {
-    if (selectedCategory === 'all') return []
-    return Array.from(new Set(allProducts
-      .filter(p => p.category === selectedCategory)
-      .map(p => p.subcategory)
-      .filter(Boolean)))
-  }, [selectedCategory])
-
   // Reset page when filters change
   React.useEffect(() => {
     setCurrentPage(1)
-  }, [searchTerm, selectedCategory, selectedSubcategory, priceRange])
+  }, [searchTerm, selectedCategory, priceRange])
 
   // WhatsApp message generator
   const generateWhatsAppMessage = (product: any) => {
@@ -122,53 +135,34 @@ function ProductsContent() {
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Browse our extensive collection of {allProducts.length} premium bathroom fittings.
-            Find the perfect products for your space with our advanced search and filtering options.
           </p>
         </div>
 
-        {/* Search and Filters */}
+        {/* Search, Category Filter, and Price Filter */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-4 gap-4">
             {/* Search */}
-            <div className="relative">
+            <div className="relative md:col-span-2">
               <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="Search products by name, description, or features..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            {/* Category Filter */}
+            {/* Category Filter (using subcategories) */}
             <select
               value={selectedCategory}
-              onChange={(e) => {
-                setSelectedCategory(e.target.value)
-                setSelectedSubcategory('all')
-              }}
+              onChange={(e) => setSelectedCategory(e.target.value)}
               className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="all">All Categories</option>
-              {productCategories.map((category) => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
-
-            {/* Subcategory Filter */}
-            <select
-              value={selectedSubcategory}
-              onChange={(e) => setSelectedSubcategory(e.target.value)}
-              disabled={selectedCategory === 'all'}
-              className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100"
-            >
-              <option value="all">All Subcategories</option>
-              {subcategories.map((subcategory) => (
-                <option key={subcategory} value={subcategory}>
-                  {subcategory}
+              {availableCategories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
                 </option>
               ))}
             </select>
@@ -198,6 +192,7 @@ function ProductsContent() {
           <div className="text-sm text-gray-600">
             Showing {((currentPage - 1) * PRODUCTS_PER_PAGE) + 1}-{Math.min(currentPage * PRODUCTS_PER_PAGE, filteredProducts.length)} of {filteredProducts.length} products
             {searchTerm && ` for "${searchTerm}"`}
+            {selectedCategory !== 'all' && ` in ${selectedCategory}`}
           </div>
           <div className="text-sm text-gray-500">
             Page {currentPage} of {totalPages}
@@ -267,9 +262,6 @@ function ProductsContent() {
                     ({product.reviewCount})
                   </span>
                 </div>
-                <div className="mb-4">
-                  {/* Features, etc. */}
-                </div>
                 <div className="flex gap-2 mt-auto">
                   <a
                     href={generateWhatsAppMessage(product)}
@@ -303,7 +295,7 @@ function ProductsContent() {
               No products found
             </h3>
             <p className="text-gray-600">
-              Try adjusting your search terms or filter settings
+              Try adjusting your search terms, category, or price range
             </p>
           </div>
         )}

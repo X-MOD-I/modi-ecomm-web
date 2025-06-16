@@ -9,10 +9,14 @@ import { InventoryManager, type InventoryItem } from '@/data/inventory'
 import AdminProtection from '@/components/AdminProtection'
 
 interface PageProps {
+  params: Promise<{ productId: string }>
+}
+
+interface ContentProps {
   params: { productId: string }
 }
 
-function EditInventoryPageContent({ params }: PageProps) {
+function EditInventoryPageContent({ params }: ContentProps) {
   const { productId } = params
   const [inventoryItem, setInventoryItem] = useState<InventoryItem | null>(null)
   const [product] = useState(allProducts.find(p => p.id === productId))
@@ -309,10 +313,12 @@ function EditInventoryPageContent({ params }: PageProps) {
   )
 }
 
-export default function EditInventoryPage({ params }: PageProps) {
+export default async function EditInventoryPage({ params }: PageProps) {
+  const { productId } = await params
+  
   return (
     <AdminProtection>
-      <EditInventoryPageContent params={params} />
+      <EditInventoryPageContent params={{ productId }} />
     </AdminProtection>
   )
 } 

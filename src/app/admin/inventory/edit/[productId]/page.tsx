@@ -313,12 +313,33 @@ function EditInventoryPageContent({ params }: ContentProps) {
   )
 }
 
-export default async function EditInventoryPage({ params }: PageProps) {
-  const { productId } = await params
-  
+function EditInventoryPageWrapper({ params }: PageProps) {
+  const [productId, setProductId] = useState<string | null>(null)
+
+  useEffect(() => {
+    params.then(resolvedParams => {
+      setProductId(resolvedParams.productId)
+    })
+  }, [params])
+
+  if (!productId) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <Package className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Loading...</h3>
+        </div>
+      </div>
+    )
+  }
+
+  return <EditInventoryPageContent params={{ productId }} />
+}
+
+export default function EditInventoryPage({ params }: PageProps) {
   return (
     <AdminProtection>
-      <EditInventoryPageContent params={{ productId }} />
+      <EditInventoryPageWrapper params={params} />
     </AdminProtection>
   )
 } 

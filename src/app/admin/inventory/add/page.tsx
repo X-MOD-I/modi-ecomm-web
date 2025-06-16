@@ -6,8 +6,9 @@ import Image from 'next/image'
 import { ChevronLeft, Package, Save, Search, Plus } from 'lucide-react'
 import { allProducts } from '@/data/products'
 import { InventoryManager } from '@/data/inventory'
+import AdminProtection from '@/components/AdminProtection'
 
-export default function AddToInventory() {
+function AddToInventoryContent() {
   const [selectedProductId, setSelectedProductId] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [formData, setFormData] = useState({
@@ -306,5 +307,13 @@ export default function AddToInventory() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function AddToInventory() {
+  return (
+    <AdminProtection>
+      <AddToInventoryContent />
+    </AdminProtection>
   )
 } 

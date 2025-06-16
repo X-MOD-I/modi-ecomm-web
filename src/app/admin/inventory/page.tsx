@@ -21,8 +21,9 @@ import {
 import { allProducts, type Product } from '@/data/products'
 import { InventoryManager } from '@/data/inventory'
 import QuickStockEdit from '@/components/QuickStockEdit'
+import AdminProtection from '@/components/AdminProtection'
 
-export default function InventoryManagement() {
+function InventoryManagementContent() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [stockFilter, setStockFilter] = useState('all') // all, in-stock, out-of-stock, low-stock
@@ -467,5 +468,13 @@ export default function InventoryManagement() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function InventoryManagement() {
+  return (
+    <AdminProtection>
+      <InventoryManagementContent />
+    </AdminProtection>
   )
 } 

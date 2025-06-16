@@ -1,9 +1,13 @@
+'use client'
+
 import Link from 'next/link'
-import { ShoppingBag, Package, TrendingUp, Users, DollarSign, AlertTriangle, CheckCircle } from 'lucide-react'
+import { ShoppingBag, Package, TrendingUp, Users, DollarSign, AlertTriangle, CheckCircle, LogOut, User } from 'lucide-react'
 import { allProducts } from '@/data/products'
 import { InventoryManager } from '@/data/inventory'
+import AdminProtection from '@/components/AdminProtection'
+import { AuthManager } from '@/lib/auth'
 
-export default function AdminDashboard() {
+function AdminDashboardContent() {
   // Calculate REAL inventory statistics using our own inventory system
   const inventoryStats = InventoryManager.getInventoryStats()
   const totalProducts = allProducts.length
@@ -22,6 +26,16 @@ export default function AdminDashboard() {
   const lowStockItems = allInventoryItems.filter(item => 
     item.quantityInStock > 0 && item.quantityInStock <= item.reorderPoint
   ).length
+
+  // Get current user info
+  const currentUser = AuthManager.getCurrentUser()
+
+  const handleLogout = () => {
+    if (confirm('Are you sure you want to logout?')) {
+      AuthManager.logout()
+      window.location.href = '/admin/login'
+    }
+  }
 
   const stats = [
     {
@@ -92,12 +106,30 @@ export default function AdminDashboard() {
               <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
               <p className="text-gray-600 mt-1">Manage your store inventory and products</p>
             </div>
-            <Link 
-              href="/"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              View Store
-            </Link>
+            <div className="flex items-center gap-3">
+              {/* User Info */}
+              <div className="flex items-center gap-2 text-sm text-gray-600 bg-white px-3 py-2 rounded-lg border">
+                <User className="h-4 w-4" />
+                <span>Welcome, {currentUser?.username || 'Admin'}</span>
+              </div>
+              
+              {/* Navigation Buttons */}
+              <Link 
+                href="/"
+                className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                View Store
+              </Link>
+              
+              {/* Logout Button */}
+              <button
+                onClick={handleLogout}
+                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -268,4 +300,12 @@ export default function AdminDashboard() {
       </div>
     </div>
   )
-} 
+}
+
+export default function AdminDashboard() {
+  return (
+    <AdminProtection>
+      <AdminDashboardContent />
+    </AdminProtection>
+  )
+}

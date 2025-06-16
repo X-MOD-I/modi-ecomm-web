@@ -13,6 +13,7 @@
     "merge-products": "node scripts/merge-products.js"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
@@ -26,8 +27,10 @@
     "postcss": "^8.5.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.58.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "zod": "^3.25.65"
   }
 }

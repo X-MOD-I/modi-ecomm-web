@@ -6,12 +6,13 @@ import Image from 'next/image'
 import { ChevronLeft, Package, Save, Plus, Minus, History, Edit, Trash2 } from 'lucide-react'
 import { allProducts } from '@/data/products'
 import { InventoryManager, type InventoryItem } from '@/data/inventory'
+import AdminProtection from '@/components/AdminProtection'
 
 interface PageProps {
   params: { productId: string }
 }
 
-export default function EditInventoryPage({ params }: PageProps) {
+function EditInventoryPageContent({ params }: PageProps) {
   const { productId } = params
   const [inventoryItem, setInventoryItem] = useState<InventoryItem | null>(null)
   const [product] = useState(allProducts.find(p => p.id === productId))
@@ -305,5 +306,13 @@ export default function EditInventoryPage({ params }: PageProps) {
         </div>
       )}
     </div>
+  )
+}
+
+export default function EditInventoryPage({ params }: PageProps) {
+  return (
+    <AdminProtection>
+      <EditInventoryPageContent params={params} />
+    </AdminProtection>
   )
 } 

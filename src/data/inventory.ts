@@ -40,7 +40,7 @@ const mockInventory: InventoryItem[] = [
   },
   {
     productId: 'GR1002',
-    quantityInStock: 5,
+    quantityInStock: 5,  // Low stock
     reorderPoint: 15,
     maxStock: 50,
     lastRestocked: new Date('2024-01-10'),
@@ -50,13 +50,43 @@ const mockInventory: InventoryItem[] = [
   },
   {
     productId: 'GR1003',
-    quantityInStock: 0,
+    quantityInStock: 0,  // Out of stock
     reorderPoint: 20,
     maxStock: 80,
     lastRestocked: new Date('2024-01-05'),
     cost: 950,
     supplier: 'Ganga Bath Fittings',
     location: 'Warehouse B'
+  },
+  {
+    productId: 'GR1004',
+    quantityInStock: 50,
+    reorderPoint: 20,
+    maxStock: 100,
+    lastRestocked: new Date('2024-01-20'),
+    cost: 1100,
+    supplier: 'Ganga Bath Fittings',
+    location: 'Warehouse A'
+  },
+  {
+    productId: 'GR1005',
+    quantityInStock: 8,  // Low stock
+    reorderPoint: 12,
+    maxStock: 60,
+    lastRestocked: new Date('2024-01-12'),
+    cost: 750,
+    supplier: 'Ganga Bath Fittings',
+    location: 'Warehouse B'
+  },
+  {
+    productId: 'TS001',
+    quantityInStock: 15,
+    reorderPoint: 8,
+    maxStock: 40,
+    lastRestocked: new Date('2024-01-18'),
+    cost: 450,
+    supplier: 'Tora Shower Systems',
+    location: 'Warehouse A'
   }
 ]
 
@@ -81,9 +111,56 @@ const mockTransactions: InventoryTransaction[] = [
     quantity: 25,
     previousQuantity: 50,
     newQuantity: 25,
-    reason: 'Sale',
+    reason: 'Customer order',
     date: new Date('2024-01-20'),
     userId: 'admin'
+  },
+  {
+    id: 'TXN003',
+    productId: 'GR1002',
+    type: 'IN',
+    quantity: 20,
+    previousQuantity: 0,
+    newQuantity: 20,
+    reason: 'Initial stock',
+    date: new Date('2024-01-10'),
+    userId: 'admin',
+    reference: 'PO-2024-002'
+  },
+  {
+    id: 'TXN004',
+    productId: 'GR1002',
+    type: 'OUT',
+    quantity: 15,
+    previousQuantity: 20,
+    newQuantity: 5,
+    reason: 'Bulk order',
+    date: new Date('2024-01-22'),
+    userId: 'admin'
+  },
+  {
+    id: 'TXN005',
+    productId: 'GR1004',
+    type: 'IN',
+    quantity: 50,
+    previousQuantity: 0,
+    newQuantity: 50,
+    reason: 'Stock replenishment',
+    date: new Date('2024-01-20'),
+    userId: 'admin',
+    reference: 'PO-2024-003'
+  },
+  {
+    id: 'TXN006',
+    productId: 'TS001',
+    type: 'IN',
+    quantity: 15,
+    previousQuantity: 0,
+    newQuantity: 15,
+    reason: 'New product launch',
+    date: new Date('2024-01-18'),
+    userId: 'admin',
+    reference: 'PO-2024-004'
   }
 ]
 
@@ -238,15 +315,16 @@ export class InventoryManager {
     ).length
     const totalValue = this.getTotalInventoryValue()
     const totalQuantity = allItems.reduce((sum, item) => sum + item.quantityInStock, 0)
+    const averageCost = totalProducts > 0 ? totalValue / totalQuantity : 0
 
     return {
-      totalProducts,
-      inStock,
-      outOfStock,
-      lowStock,
-      totalValue,
-      totalQuantity,
-      averageValue: totalProducts > 0 ? totalValue / totalProducts : 0
+      totalProducts,      // Total number of products in inventory system
+      inStock,           // Products with quantity > 0
+      outOfStock,        // Products with quantity = 0
+      lowStock,          // Products below reorder point
+      totalValue,        // Total value of all stock (quantity × cost)
+      totalQuantity,     // Total units in stock
+      averageCost        // Average cost per unit
     }
   }
 }

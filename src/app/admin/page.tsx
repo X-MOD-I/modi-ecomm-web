@@ -1,17 +1,27 @@
 import Link from 'next/link'
-import { ShoppingBag, Package, TrendingUp, Users, DollarSign, AlertTriangle } from 'lucide-react'
+import { ShoppingBag, Package, TrendingUp, Users, DollarSign, AlertTriangle, CheckCircle } from 'lucide-react'
 import { allProducts } from '@/data/products'
 import { InventoryManager } from '@/data/inventory'
 
 export default function AdminDashboard() {
-  // Calculate inventory statistics using our own inventory system
+  // Calculate REAL inventory statistics using our own inventory system
   const inventoryStats = InventoryManager.getInventoryStats()
   const totalProducts = allProducts.length
   const recentTransactions = InventoryManager.getRecentTransactions(5)
   
   // Calculate catalog vs inventory stats
-  const inventoryProducts = InventoryManager.getAllInventory().length
+  const allInventoryItems = InventoryManager.getAllInventory()
+  const inventoryProducts = allInventoryItems.length
   const productsWithoutInventory = totalProducts - inventoryProducts
+  
+  // Calculate real statistics
+  const totalStockValue = allInventoryItems.reduce((sum, item) => sum + (item.quantityInStock * item.cost), 0)
+  const totalStockQuantity = allInventoryItems.reduce((sum, item) => sum + item.quantityInStock, 0)
+  const inStockItems = allInventoryItems.filter(item => item.quantityInStock > 0).length
+  const outOfStockItems = allInventoryItems.filter(item => item.quantityInStock === 0).length
+  const lowStockItems = allInventoryItems.filter(item => 
+    item.quantityInStock > 0 && item.quantityInStock <= item.reorderPoint
+  ).length
 
   const stats = [
     {
@@ -22,39 +32,53 @@ export default function AdminDashboard() {
       textColor: 'text-blue-600'
     },
     {
-      title: 'In Our Inventory',
-      value: inventoryStats.inStock.toLocaleString(),
+      title: 'Products in Inventory',
+      value: inventoryProducts.toLocaleString(),
       icon: ShoppingBag,
       color: 'bg-green-500',
       textColor: 'text-green-600'
     },
     {
+      title: 'In Stock Items',
+      value: inStockItems.toLocaleString(),
+      icon: CheckCircle,
+      color: 'bg-green-500',
+      textColor: 'text-green-600'
+    },
+    {
       title: 'Out of Stock',
-      value: inventoryStats.outOfStock.toLocaleString(),
+      value: outOfStockItems.toLocaleString(),
       icon: AlertTriangle,
       color: 'bg-red-500',
       textColor: 'text-red-600'
     },
     {
       title: 'Low Stock Alert',
-      value: inventoryStats.lowStock.toLocaleString(),
+      value: lowStockItems.toLocaleString(),
       icon: TrendingUp,
       color: 'bg-yellow-500',
       textColor: 'text-yellow-600'
     },
     {
-      title: 'Total Inventory Value',
-      value: `₹${(inventoryStats.totalValue / 100000).toFixed(1)}L`,
+      title: 'Total Stock Value',
+      value: totalStockValue > 0 ? `₹${(totalStockValue / 100000).toFixed(1)}L` : '₹0',
       icon: DollarSign,
       color: 'bg-purple-500',
       textColor: 'text-purple-600'
     },
     {
-      title: 'Total Stock Quantity',
-      value: inventoryStats.totalQuantity.toLocaleString(),
+      title: 'Total Units in Stock',
+      value: totalStockQuantity.toLocaleString(),
       icon: TrendingUp,
       color: 'bg-indigo-500',
       textColor: 'text-indigo-600'
+    },
+    {
+      title: 'Without Inventory',
+      value: productsWithoutInventory.toLocaleString(),
+      icon: Package,
+      color: 'bg-gray-500',
+      textColor: 'text-gray-600'
     }
   ]
 
@@ -80,7 +104,7 @@ export default function AdminDashboard() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Statistics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
             <div key={index} className="bg-white rounded-xl shadow-sm p-6 border">
               <div className="flex items-center justify-between">
@@ -208,7 +232,7 @@ export default function AdminDashboard() {
                 <AlertTriangle className="h-5 w-5 text-red-500 mr-3" />
                 <div className="flex-1">
                   <p className="font-medium text-red-900">Out of Stock Items</p>
-                  <p className="text-sm text-red-700">{inventoryStats.outOfStock} products need restocking</p>
+                  <p className="text-sm text-red-700">{outOfStockItems} products need restocking</p>
                 </div>
                 <Link href="/admin/inventory?filter=out-of-stock" className="text-red-600 hover:text-red-700 text-sm font-medium">
                   View →
@@ -220,7 +244,7 @@ export default function AdminDashboard() {
                 <TrendingUp className="h-5 w-5 text-yellow-500 mr-3" />
                 <div className="flex-1">
                   <p className="font-medium text-yellow-900">Low Stock Items</p>
-                  <p className="text-sm text-yellow-700">{inventoryStats.lowStock} products below reorder point</p>
+                  <p className="text-sm text-yellow-700">{lowStockItems} products below reorder point</p>
                 </div>
                 <Link href="/admin/inventory?filter=low-stock" className="text-yellow-600 hover:text-yellow-700 text-sm font-medium">
                   View →

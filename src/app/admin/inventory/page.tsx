@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import { allProducts, type Product } from '@/data/products'
 import { InventoryManager } from '@/data/inventory'
+import QuickStockEdit from '@/components/QuickStockEdit'
 
 export default function InventoryManagement() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -28,6 +29,10 @@ export default function InventoryManagement() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage] = useState(20)
   const [selectedProducts, setSelectedProducts] = useState<string[]>([])
+  const [refreshKey, setRefreshKey] = useState(0)
+
+  // Force re-render when inventory changes
+  const forceRefresh = () => setRefreshKey(prev => prev + 1)
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -92,7 +97,31 @@ export default function InventoryManagement() {
   // Bulk actions
   const handleBulkAction = (action: 'delete' | 'in-stock' | 'out-of-stock') => {
     console.log(`Bulk ${action} for products:`, selectedProducts)
-    // In a real app, this would make API calls
+    
+    // Update inventory for selected products
+    selectedProducts.forEach(productId => {
+      if (action === 'in-stock') {
+        // Add to inventory if not exists, or update stock if exists
+        const existingInventory = InventoryManager.getProductInventory(productId)
+        if (!existingInventory) {
+          InventoryManager.addProduct({
+            productId,
+            quantityInStock: 10,
+            reorderPoint: 5,
+            maxStock: 100,
+            cost: 0,
+            supplier: 'Default Supplier',
+            location: 'Warehouse A'
+          })
+        } else {
+          InventoryManager.updateStock(productId, Math.max(1, existingInventory.quantityInStock), 'Bulk action - mark in stock')
+        }
+      } else if (action === 'out-of-stock') {
+        InventoryManager.updateStock(productId, 0, 'Bulk action - mark out of stock')
+      }
+    })
+    
+    alert(`Bulk ${action} completed for ${selectedProducts.length} products`)
     setSelectedProducts([])
   }
 
@@ -333,9 +362,17 @@ export default function InventoryManagement() {
                             <StatusIcon className="h-3 w-3" />
                             {stockStatus.label}
                           </span>
-                          <span className="text-xs text-gray-500">
-                            Qty: {stockStatus.quantity}
-                          </span>
+                          {InventoryManager.getProductInventory(product.id) ? (
+                            <QuickStockEdit
+                              productId={product.id}
+                              currentStock={stockStatus.quantity}
+                              onUpdate={forceRefresh}
+                            />
+                          ) : (
+                            <span className="text-xs text-gray-500">
+                              Not in inventory
+                            </span>
+                          )}
                         </div>
                       </td>
                       <td className="px-6 py-4">
@@ -347,13 +384,23 @@ export default function InventoryManagement() {
                           >
                             <Eye className="h-4 w-4" />
                           </Link>
-                          <Link
-                            href={`/admin/inventory/edit/${product.id}`}
-                            className="p-1 text-gray-400 hover:text-blue-600 transition-colors"
-                            title="Edit Product"
-                          >
-                            <Edit className="h-4 w-4" />
-                          </Link>
+                          {InventoryManager.getProductInventory(product.id) ? (
+                            <Link
+                              href={`/admin/inventory/edit/${product.id}`}
+                              className="p-1 text-gray-400 hover:text-blue-600 transition-colors"
+                              title="Manage Inventory"
+                            >
+                              <Edit className="h-4 w-4" />
+                            </Link>
+                          ) : (
+                            <Link
+                              href={`/admin/inventory/add`}
+                              className="p-1 text-gray-400 hover:text-green-600 transition-colors"
+                              title="Add to Inventory"
+                            >
+                              <Plus className="h-4 w-4" />
+                            </Link>
+                          )}
                           <button
                             onClick={() => console.log('Delete product:', product.id)}
                             className="p-1 text-gray-400 hover:text-red-600 transition-colors"
